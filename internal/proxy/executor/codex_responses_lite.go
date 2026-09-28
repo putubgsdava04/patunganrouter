@@ -46,7 +46,7 @@ func responseInputItems(items any) ([]any, bool) {
 
 // isCodexResponsesLiteModel reports whether a model uses the responses-lite
 // shape. A trailing "(level)" override is stripped first: that suffix is a
-// 9router request override, not part of the model id.
+// patunganrouter request override, not part of the model id.
 func isCodexResponsesLiteModel(model string) bool {
 	base := model
 	if open := strings.LastIndex(base, "("); open != -1 && strings.HasSuffix(base, ")") {

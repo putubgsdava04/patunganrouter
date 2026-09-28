@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 // deviceProviders lists providers supporting the device-code family.

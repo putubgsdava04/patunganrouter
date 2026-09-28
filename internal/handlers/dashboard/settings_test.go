@@ -11,13 +11,13 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"9router/proxy/internal/auth"
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/auth"
+	"patunganrouter/proxy/internal/db"
 )
 
 // setupSettingsTestDB extends the shared dashboard schema with the tables the
 // backup export walks (providerNodes/proxyPools are created elsewhere in prod).
-// DATA_DIR is isolated per test so the CLI-token files never touch ~/.9router.
+// DATA_DIR is isolated per test so the CLI-token files never touch ~/.patunganrouter.
 func setupSettingsTestDB(t *testing.T) (*db.Repo, func()) {
 	t.Helper()
 	t.Setenv("DATA_DIR", t.TempDir())

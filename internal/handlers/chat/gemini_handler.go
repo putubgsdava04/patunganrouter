@@ -1,7 +1,7 @@
 package chat
 
 import (
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/log"
 	"bytes"
 	"context"
 	json "encoding/json/v2"
@@ -11,12 +11,12 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy"
-	"9router/proxy/internal/proxy/executor"
-	"9router/proxy/internal/proxy/oauth"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/proxy/oauth"
+	"patunganrouter/proxy/internal/translator"
 )
 
 // forwardGeminiNativeRequest handles forwarding for gemini-native providers (antigravity).

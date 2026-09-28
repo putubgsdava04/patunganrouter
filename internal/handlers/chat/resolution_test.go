@@ -4,8 +4,8 @@ import (
 	json "encoding/json/v2"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlers/shared"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlers/shared"
 )
 
 func TestNewChatHandler_DefaultsAllOff(t *testing.T) {

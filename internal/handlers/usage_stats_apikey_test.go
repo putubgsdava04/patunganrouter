@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 // TestUsageStats_ByApiKey covers the API-key breakdown, which the response

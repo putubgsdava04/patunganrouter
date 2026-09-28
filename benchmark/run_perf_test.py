@@ -186,7 +186,7 @@ def benchmark_run(binary_path, title, capture_profile=False, profile_out=None):
 
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "bench"
-    bin_path = sys.argv[2] if len(sys.argv) > 2 else "/tmp/9router-bench"
+    bin_path = sys.argv[2] if len(sys.argv) > 2 else "/tmp/patunganrouter-bench"
     title = sys.argv[3] if len(sys.argv) > 3 else "Benchmark"
     prof_out = sys.argv[4] if len(sys.argv) > 4 else None
 

@@ -24,7 +24,7 @@
     updateInfo?: SystemVersionInfo | null
     version?: string
   } = $props()
-  const INSTALL_CMD = '9router-go update'
+  const INSTALL_CMD = 'patunganrouter update'
   let copied = $state(false)
 
   // Media providers accordion (collapsed by default)
@@ -126,7 +126,7 @@
     <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
   </div>
 
-  <!-- Brand header: 9router-go with official favicon.svg logo -->
+  <!-- Brand header: patunganrouter with official favicon.svg logo -->
   <div class="px-6 py-4 flex flex-col gap-2 shrink-0">
     <a
       href={TAB_ROUTES.endpoint}
@@ -138,13 +138,13 @@
       >
         <img
           src="/favicon.svg"
-          alt="9router-go"
+          alt="patunganrouter"
           class="w-full h-full object-contain"
         />
       </div>
       <div class="flex flex-col min-w-0">
         <h1 class="text-lg font-semibold tracking-tight text-text-main truncate leading-snug">
-          9router-go
+          patunganrouter
         </h1>
         <span class="text-xs text-text-muted leading-tight">
           {version ? `v${version}` : 'v1.9.1'}

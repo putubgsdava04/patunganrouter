@@ -3,7 +3,7 @@ package chat
 import (
 	"testing"
 
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/db"
 )
 
 func TestGetBestConnection_NoAuth_WithProxyStrategy(t *testing.T) {

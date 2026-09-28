@@ -10,12 +10,12 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"9router/proxy/internal/auth"
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/auth"
+	"patunganrouter/proxy/internal/db"
 )
 
 // authTestEnv pins the JWT secret and data dir so session cookies are
-// deterministic and tests never touch the real ~/.9router.
+// deterministic and tests never touch the real ~/.patunganrouter.
 func authTestEnv(t *testing.T) {
 	t.Helper()
 	t.Setenv("JWT_SECRET", "dashboard-auth-test-secret")

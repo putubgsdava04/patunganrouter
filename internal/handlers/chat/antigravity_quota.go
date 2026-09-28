@@ -1,8 +1,8 @@
 package chat
 
 import (
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/translator"
 	"bytes"
 	"context"
 	json "encoding/json/v2"

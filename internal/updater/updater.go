@@ -22,20 +22,20 @@ import (
 	"sync"
 	"time"
 
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/log"
 	"github.com/samber/lo"
 )
 
-// CurrentVersion is the active 9router-go application version.
-// Can be overridden at build time via -ldflags "-X 9router/proxy/internal/updater.CurrentVersion=1.8.8"
+// CurrentVersion is the active patunganrouter application version.
+// Can be overridden at build time via -ldflags "-X patunganrouter/proxy/internal/updater.CurrentVersion=1.8.8"
 // Default fallback is read from version.json at init if not overridden.
 var CurrentVersion = "1.9.5"
 
 // DefaultUpdateURL is the primary remote version manifest URL.
-var DefaultUpdateURL = "https://raw.githubusercontent.com/luqman-v1/9router-go/main/version.json"
+var DefaultUpdateURL = "https://raw.githubusercontent.com/putubgsdava04/patunganrouter/main/version.json"
 
 // DefaultGitHubRepo is the repository for GitHub Releases API fallback.
-var DefaultGitHubRepo = "luqman-v1/9router-go"
+var DefaultGitHubRepo = "putubgsdava04/patunganrouter"
 
 // DefaultCheckInterval is the periodic background update check interval (6 hours).
 const DefaultCheckInterval = 6 * time.Hour
@@ -257,7 +257,7 @@ func checkGitHubReleases(ctx context.Context, apiURL string) (*UpdateInfo, error
 		return nil, err
 	}
 	req.Header.Set("Accept", "application/vnd.github.v3+json")
-	req.Header.Set("User-Agent", "9router-go/"+CurrentVersion)
+	req.Header.Set("User-Agent", "patunganrouter/"+CurrentVersion)
 
 	client := &http.Client{Timeout: 10 * time.Second}
 	resp, err := client.Do(req)
@@ -416,7 +416,7 @@ func PerformSelfUpdate(downloadURL, expectedSHA256 string) error {
 
 	// Create temporary binary file in the target directory
 	dir := filepath.Dir(execPath)
-	tmpFile, err := os.CreateTemp(dir, ".9router-go-update-*.tmp")
+	tmpFile, err := os.CreateTemp(dir, ".patunganrouter-update-*.tmp")
 	if err != nil {
 		return fmt.Errorf("create temp file: %w", err)
 	}
@@ -539,7 +539,7 @@ func scoreArchiveEntry(name string, content []byte) int {
 	low := strings.ToLower(name)
 
 	// Prefer entries containing the project name over generic files
-	if strings.Contains(low, "9router-go") || strings.Contains(low, "9router_go") {
+	if strings.Contains(low, "patunganrouter") || strings.Contains(low, "patunganrouter_") {
 		score += 10
 	}
 
@@ -669,11 +669,11 @@ func runCheckCycle(ctx context.Context) {
 	}
 
 	if !info.HasUpdate {
-		log.Debug("updater", "9router-go is up to date", "version", info.CurrentVersion)
+		log.Debug("updater", "patunganrouter is up to date", "version", info.CurrentVersion)
 		return
 	}
 
-	log.Info("updater", "NEW 9ROUTER-GO VERSION AVAILABLE!",
+	log.Info("updater", "NEW PATUNGANROUTER VERSION AVAILABLE!",
 		"current", info.CurrentVersion,
 		"latest", info.LatestVersion,
 		"downloadUrl", info.DownloadURL,

@@ -1,7 +1,7 @@
 package mitm
 
 import (
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/log"
 	"bufio"
 	"crypto"
 	"crypto/tls"
@@ -14,7 +14,7 @@ import (
 	"strings"
 	"sync"
 
-	"9router/proxy/internal/mitm/handlers"
+	"patunganrouter/proxy/internal/mitm/handlers"
 )
 
 // toolDomains maps SNI hostname → handler function.

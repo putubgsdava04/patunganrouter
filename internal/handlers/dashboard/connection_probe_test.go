@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/proxy/oauth"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/proxy/oauth"
 )
 
 // setupProbeTestDB adds the tables the connection probe needs on top of the

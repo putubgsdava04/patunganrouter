@@ -3,7 +3,7 @@ package shared
 import (
 	"net/http"
 
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 // ModelInfo holds the resolved provider and model identifiers.

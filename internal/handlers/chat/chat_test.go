@@ -10,10 +10,10 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/dbtest"
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/dbtest"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/translator"
 	"os"
 )
 

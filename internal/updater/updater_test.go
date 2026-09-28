@@ -52,7 +52,7 @@ func TestCheckUpdate_Manifest(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		manifest := map[string]any{
 			"latestVersion": "2.0.0",
-			"downloadUrl":   "https://example.com/downloads/9router-go",
+			"downloadUrl":   "https://example.com/downloads/patunganrouter",
 			"releaseNotes":  "Major release 2.0.0",
 			"sha256":        "abcdef123456",
 		}
@@ -75,7 +75,7 @@ func TestCheckUpdate_Manifest(t *testing.T) {
 	if info.LatestVersion != "2.0.0" {
 		t.Errorf("expected latestVersion 2.0.0, got %s", info.LatestVersion)
 	}
-	if info.DownloadURL != "https://example.com/downloads/9router-go" {
+	if info.DownloadURL != "https://example.com/downloads/patunganrouter" {
 		t.Errorf("expected downloadUrl, got %s", info.DownloadURL)
 	}
 }
@@ -98,12 +98,12 @@ func TestCheckUpdate_GitHubReleasesFallback(t *testing.T) {
 			"body":     "Awesome new features",
 			"assets": []map[string]any{
 				{
-					"name":                 "9router-go_darwin_arm64.tar.gz",
-					"browser_download_url": "https://github.com/releases/9router-go_darwin_arm64.tar.gz",
+					"name":                 "patunganrouter_darwin_arm64.tar.gz",
+					"browser_download_url": "https://github.com/releases/patunganrouter_darwin_arm64.tar.gz",
 				},
 				{
-					"name":                 "9router-go_linux_amd64.tar.gz",
-					"browser_download_url": "https://github.com/releases/9router-go_linux_amd64.tar.gz",
+					"name":                 "patunganrouter_linux_amd64.tar.gz",
+					"browser_download_url": "https://github.com/releases/patunganrouter_linux_amd64.tar.gz",
 				},
 			},
 		}
@@ -129,7 +129,7 @@ func TestCheckUpdate_GitHubReleasesFallback(t *testing.T) {
 }
 
 func TestExtractExecutableBytes_TarGz(t *testing.T) {
-	// Create a dummy .tar.gz containing a 9router-go binary payload
+	// Create a dummy .tar.gz containing a patunganrouter binary payload
 	binaryContent := bytes.Repeat([]byte("BINARY_PAYLOAD_CONTENT_TEST_EXEC_DATA"), 100)
 
 	var buf bytes.Buffer
@@ -137,7 +137,7 @@ func TestExtractExecutableBytes_TarGz(t *testing.T) {
 	tw := tar.NewWriter(gw)
 
 	hdr := &tar.Header{
-		Name: "9router-go",
+		Name: "patunganrouter",
 		Mode: 0755,
 		Size: int64(len(binaryContent)),
 	}
@@ -150,7 +150,7 @@ func TestExtractExecutableBytes_TarGz(t *testing.T) {
 	tw.Close()
 	gw.Close()
 
-	extracted, err := extractExecutableBytes(buf.Bytes(), "9router-go_darwin_arm64.tar.gz")
+	extracted, err := extractExecutableBytes(buf.Bytes(), "patunganrouter_darwin_arm64.tar.gz")
 	if err != nil {
 		t.Fatalf("extractExecutableBytes failed: %v", err)
 	}
@@ -166,7 +166,7 @@ func TestExtractExecutableBytes_Zip(t *testing.T) {
 	var buf bytes.Buffer
 	zw := zip.NewWriter(&buf)
 
-	f, err := zw.Create("9router-go.exe")
+	f, err := zw.Create("patunganrouter.exe")
 	if err != nil {
 		t.Fatalf("create zip entry: %v", err)
 	}
@@ -175,7 +175,7 @@ func TestExtractExecutableBytes_Zip(t *testing.T) {
 	}
 	zw.Close()
 
-	extracted, err := extractExecutableBytes(buf.Bytes(), "9router-go_windows_amd64.zip")
+	extracted, err := extractExecutableBytes(buf.Bytes(), "patunganrouter_windows_amd64.zip")
 	if err != nil {
 		t.Fatalf("extract zip failed: %v", err)
 	}
@@ -190,9 +190,9 @@ func TestMatchReleaseAsset(t *testing.T) {
 		Name               string `json:"name"`
 		BrowserDownloadURL string `json:"browser_download_url"`
 	}{
-		{Name: "9router-go_linux_amd64.tar.gz", BrowserDownloadURL: "url-linux-amd64"},
-		{Name: "9router-go_darwin_arm64.tar.gz", BrowserDownloadURL: "url-darwin-arm64"},
-		{Name: "9router-go_windows_amd64.zip", BrowserDownloadURL: "url-windows-amd64"},
+		{Name: "patunganrouter_linux_amd64.tar.gz", BrowserDownloadURL: "url-linux-amd64"},
+		{Name: "patunganrouter_darwin_arm64.tar.gz", BrowserDownloadURL: "url-darwin-arm64"},
+		{Name: "patunganrouter_windows_amd64.zip", BrowserDownloadURL: "url-windows-amd64"},
 		{Name: "checksums.txt", BrowserDownloadURL: "url-checksums"},
 	}
 

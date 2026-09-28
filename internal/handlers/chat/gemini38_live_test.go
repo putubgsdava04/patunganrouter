@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/proxy/executor"
 )
 
 // TestLiveE2E_Antigravity_Gemini38FlashMedium_RealChat hits the real upstream

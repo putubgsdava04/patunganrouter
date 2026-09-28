@@ -126,7 +126,7 @@
     let controller: AbortController | null = null
     let reconnectTimeout: ReturnType<typeof setTimeout> | null = null
 
-    const token = typeof localStorage !== 'undefined' ? localStorage.getItem('9router_key') || '' : ''
+    const token = typeof localStorage !== 'undefined' ? localStorage.getItem('patunganrouter_key') || '' : ''
     let streamInitialized = false
 
     const connectStream = async () => {

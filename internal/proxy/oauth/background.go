@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/models"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/models"
 )
 
 // Refresh when expiry is within 30 minutes (upstream BACKGROUND_REFRESH_LEAD_MS parity).

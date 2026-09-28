@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
- * 9Router design tokens
+ * patunganrouter design tokens
  * Ported from decolua/9router `src/app/globals.css`:
  * warm paper light theme + charcoal dark theme, terracotta brand (#E56A4A),
  * frosted sidebar, 10/14px brand radii, soft/warm/elevated shadows.

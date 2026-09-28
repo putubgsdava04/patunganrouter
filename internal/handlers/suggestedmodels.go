@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 // suggestedModel mirrors the shape returned by the Next.js

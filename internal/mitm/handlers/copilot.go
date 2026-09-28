@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// HandleCopilot intercepts GitHub Copilot requests and forwards to 9router chat completions.
+// HandleCopilot intercepts GitHub Copilot requests and forwards to patunganrouter chat completions.
 func HandleCopilot(w http.ResponseWriter, r *http.Request, body []byte) {
 	var reqBody map[string]any
 	if err := json.Unmarshal(body, &reqBody); err != nil {

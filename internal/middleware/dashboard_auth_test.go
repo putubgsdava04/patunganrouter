@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/auth"
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/auth"
+	"patunganrouter/proxy/internal/db"
 )
 
 func okHandler() http.HandlerFunc {

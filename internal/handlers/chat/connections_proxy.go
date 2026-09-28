@@ -1,8 +1,8 @@
 package chat
 
 import (
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/log"
 	"net/http"
 	"net/url"
 	"sync"

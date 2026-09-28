@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlers/chat"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlers/chat"
 )
 
 func TestTTS_EdgeTTS_Success(t *testing.T) {

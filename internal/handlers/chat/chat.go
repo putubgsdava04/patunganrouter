@@ -1,11 +1,11 @@
 package chat
 
 import (
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/translator"
-	"9router/proxy/internal/updater"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/translator"
+	"patunganrouter/proxy/internal/updater"
 	"bytes"
 	"context"
 	json "encoding/json/v2"
@@ -301,7 +301,7 @@ func (h *ChatHandler) HandleChangelog(w http.ResponseWriter, r *http.Request) {
 	}
 
 	urls := []string{
-		"https://raw.githubusercontent.com/luqman-v1/9router-go/main/CHANGELOG.md",
+		"https://raw.githubusercontent.com/putubgsdava04/patunganrouter/main/CHANGELOG.md",
 		"https://raw.githubusercontent.com/decolua/9router/refs/heads/master/CHANGELOG.md",
 	}
 	client := &http.Client{Timeout: 5 * time.Second}
@@ -371,7 +371,7 @@ func (h *ChatHandler) HandleTriggerUpdate(w http.ResponseWriter, r *http.Request
 	if !info.HasUpdate {
 		handlerutil.WriteJSON(w, http.StatusOK, map[string]any{
 			"status":  "up_to_date",
-			"message": "9router-go is already on the latest version",
+			"message": "patunganrouter is already on the latest version",
 			"version": info.CurrentVersion,
 		})
 		return

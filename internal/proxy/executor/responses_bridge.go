@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/translator"
 )
 
 // UpstreamSpeaksResponses reports whether the request is served by an OpenAI

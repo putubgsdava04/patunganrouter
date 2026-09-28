@@ -1,15 +1,15 @@
 <div align="center">
 
-# 9router-go — FREE AI Router & Token Saver (Single Binary)
+# patunganrouter — FREE AI Router & Token Saver (Single Binary)
 
 **Never stop coding. Save 20-40% tokens with RTK + auto-fallback to FREE & cheap AI models.**
 
 **Connect Claude Code, Cursor, Antigravity, Codex, Gemini, OpenCode, Cline, OpenClaw... to 40+ AI providers & 100+ models — no Node.js needed at runtime.**
 
-[![CI](https://github.com/luqman-v1/9router-go/actions/workflows/ci.yml/badge.svg)](https://github.com/luqman-v1/9router-go/actions/workflows/ci.yml)
-[![Release](https://github.com/luqman-v1/9router-go/actions/workflows/release.yml/badge.svg)](https://github.com/luqman-v1/9router-go/actions/workflows/release.yml)
-[![GitHub release](https://img.shields.io/github/v/release/luqman-v1/9router-go)](https://github.com/luqman-v1/9router-go/releases/latest)
-[![License](https://img.shields.io/github/license/luqman-v1/9router-go)](https://github.com/luqman-v1/9router-go/blob/main/LICENSE)
+[![CI](https://github.com/putubgsdava04/patunganrouter/actions/workflows/ci.yml/badge.svg)](https://github.com/putubgsdava04/patunganrouter/actions/workflows/ci.yml)
+[![Release](https://github.com/putubgsdava04/patunganrouter/actions/workflows/release.yml/badge.svg)](https://github.com/putubgsdava04/patunganrouter/actions/workflows/release.yml)
+[![GitHub release](https://img.shields.io/github/v/release/putubgsdava04/patunganrouter)](https://github.com/putubgsdava04/patunganrouter/releases/latest)
+[![License](https://img.shields.io/github/license/putubgsdava04/patunganrouter)](https://github.com/putubgsdava04/patunganrouter/blob/main/LICENSE)
 
 [🚀 Quick Start](#-quick-start) • [💡 Features](#-key-features) • [⚙️ Setup](#-setup-guide) • [🌐 Upstream](https://github.com/decolua/9router)
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 🤔 Why 9router-go?
+## 🤔 Why patunganrouter?
 
 Same idea as [9Router](https://github.com/decolua/9router), minus the Node.js runtime: **one Go binary** serves the proxy APIs + an embedded Svelte dashboard.
 
@@ -28,7 +28,7 @@ Same idea as [9Router](https://github.com/decolua/9router), minus the Node.js ru
 - ❌ Tool outputs (git diff, grep, ls...) burn tokens fast
 - ❌ Manual switching between providers
 
-**9router-go solves this:**
+**patunganrouter solves this:**
 
 - ✅ **RTK Token Saver** — auto-compress tool_result content, save 20-40% tokens
 - ✅ **Auto fallback** — Subscription → Cheap → Free, zero downtime
@@ -47,7 +47,7 @@ Same idea as [9Router](https://github.com/decolua/9router), minus the Node.js ru
        │ http://localhost:20130/v1
        ↓
 ┌─────────────────────────────────────────────┐
-│         9router-go (Smart Router)           │
+│         patunganrouter (Smart Router)           │
 │  • RTK Token Saver (cut tool_result tokens) │
 │  • Format translation (OpenAI ↔ Claude)     │
 │  • Quota tracking                           │
@@ -71,18 +71,18 @@ Result: Never stop coding, minimal cost + 20-40% token savings via RTK
 
 ```bash
 # macOS / Linux
-curl -fsSL https://raw.githubusercontent.com/luqman-v1/9router-go/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/putubgsdava04/patunganrouter/main/install.sh | bash
 ```
 
 ```powershell
 # Windows (PowerShell, no admin needed)
-irm https://raw.githubusercontent.com/luqman-v1/9router-go/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/putubgsdava04/patunganrouter/main/install.ps1 | iex
 ```
 
-🎉 Then start it (defaults: port `20130`, data `~/.9router` — no flags needed):
+🎉 Then start it (defaults: port `20130`, data `~/.patunganrouter` — no flags needed):
 
 ```bash
-9router-go
+patunganrouter
 # Dashboard: http://localhost:20130 (Default password: 123456)
 ```
 > Already use upstream 9Router? Point Go at the same data dir — it opens the **same `DATA_DIR/db/data.sqlite`**: providers, connections, combos, and usage carry over. Details in [`DATABASE.md`](DATABASE.md).
@@ -106,18 +106,18 @@ Claude Code / Codex / OpenClaw / Cursor / Cline Settings:
 
 ```bash
 # Docker — no build needed
-docker run -d --name 9router-go --restart unless-stopped \
-  -p 20130:20130 -v "$HOME/.9router:/data" \
+docker run -d --name patunganrouter --restart unless-stopped \
+  -p 20130:20130 -v "$HOME/.patunganrouter:/data" \
   -e PORT=20130 -e DATA_DIR=/data \
   -e INITIAL_PASSWORD=your-secure-password \
-  luqmenul/9router-go:latest
+  ghcr.io/putubgsdava04/patunganrouter:latest
 
 # Manual download — pick your file, no command line guesswork:
 # Windows → .exe | Mac M1+ → darwin-arm64 | Mac Intel → darwin-amd64
 # Linux VPS → linux-amd64 | Raspberry Pi → linux-arm64
 ```
 
-📦 [All release binaries](https://github.com/luqman-v1/9router-go/releases/latest) • 🔨 [Build from source](#-setup-guide)
+📦 [All release binaries](https://github.com/putubgsdava04/patunganrouter/releases/latest) • 🔨 [Build from source](#-setup-guide)
 
 ---
 
@@ -136,36 +136,36 @@ docker run -d --name 9router-go --restart unless-stopped \
 
 ### Release binary
 
-Download from [GitHub Releases](https://github.com/luqman-v1/9router-go/releases/latest), verify against `SHA256SUMS.txt`.
+Download from [GitHub Releases](https://github.com/putubgsdava04/patunganrouter/releases/latest), verify against `SHA256SUMS.txt`.
 
 ### Build from source
 
 Prerequisites: Go 1.27 and Bun 1.x (dashboard is embedded into the binary, so build web first):
 
 ```bash
-git clone https://github.com/luqman-v1/9router-go.git
-cd 9router-go
+git clone https://github.com/putubgsdava04/patunganrouter.git
+cd patunganrouter
 make web-build   # bun install --frozen-lockfile && bun run build
 make build       # embeds VERSION into the Go binary
 ```
 
 ### Run
 
-Defaults are enough for most people — plain `9router-go` listens on port `20130` with data in `~/.9router`:
+Defaults are enough for most people — plain `patunganrouter` listens on port `20130` with data in `~/.patunganrouter`:
 
 ```bash
-9router-go
+patunganrouter
 curl http://localhost:20130/health
-./9router-go version
+./patunganrouter version
 ```
 
 Only override when you need something different (`PORT`, `DATA_DIR`/`DB_PATH` — there are no `--port` flags):
 
 ```bash
-PORT=20129 ./9router-go                        # different port
-DATA_DIR=/srv/9router ./9router-go              # different data dir
-DB_PATH=/srv/9router/data.sqlite ./9router-go   # explicit SQLite file
-HOST=127.0.0.1 ./9router-go                     # localhost only, behind a reverse proxy
+PORT=20129 ./patunganrouter                        # different port
+DATA_DIR=/srv/patunganrouter ./patunganrouter              # different data dir
+DB_PATH=/srv/patunganrouter/data.sqlite ./patunganrouter   # explicit SQLite file
+HOST=127.0.0.1 ./patunganrouter                     # localhost only, behind a reverse proxy
 ```
 
 ### 🔑 Dashboard Login & Fresh Install
@@ -174,7 +174,7 @@ HOST=127.0.0.1 ./9router-go                     # localhost only, behind a rever
 - **Remote / VPS / Docker / LAN**: For security (preventing public takeover of fresh installs with known defaults, CVE-2026-56679), remote access blocks the default `123456` password. You **must** either:
   1. **Set `INITIAL_PASSWORD` on launch (Recommended)**:
      ```bash
-     INITIAL_PASSWORD="your-secure-password" ./9router-go
+     INITIAL_PASSWORD="your-secure-password" ./patunganrouter
      # Or in your .env file:
      # INITIAL_PASSWORD=your-secure-password
      ```
@@ -204,7 +204,7 @@ For Claude Messages clients: `ANTHROPIC_BASE_URL=http://localhost:20130/v1`.
 | --- | --- | --- |
 | `PORT` | `20130` | HTTP port |
 | `HOST` / `BIND_ADDR` | all interfaces | Listener address |
-| `DATA_DIR` | `~/.9router` (`%APPDATA%/9router` on Windows) | Data root |
+| `DATA_DIR` | `~/.patunganrouter` (`%APPDATA%/patunganrouter` on Windows) | Data root |
 | `DB_PATH` | `$DATA_DIR/db/data.sqlite` | SQLite file |
 | `INITIAL_PASSWORD` | unset (fallback `123456` locally) | First dashboard password |
 | `RTK_ENABLED` | `true` | RTK input compression |

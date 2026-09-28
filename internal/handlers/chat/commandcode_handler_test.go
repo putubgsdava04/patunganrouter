@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy/executor"
 )
 
 func TestProcessCommandcodeEvent_TextDelta(t *testing.T) {

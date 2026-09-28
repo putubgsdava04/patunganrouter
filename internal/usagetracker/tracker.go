@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/translator"
 )
 
 const (

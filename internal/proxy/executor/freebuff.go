@@ -14,8 +14,8 @@ import (
 
 	"github.com/google/uuid"
 
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 const (
@@ -260,7 +260,7 @@ func ForwardFreebuff(w http.ResponseWriter, req *Request) error {
 	}
 
 	// client_id cloaking (CLI-shaped fingerprint): the backend logs and
-	// rate-limits per client_id, so a per-request "9router-<uuid>" brands
+	// rate-limits per client_id, so a per-request "patunganrouter-<uuid>" brands
 	// every call as non-CLI traffic. Reuse the account's login fingerprintId
 	// (handed down via req.ConnData), exactly like the dashboard fork; only
 	// mint a fresh random id for connections that predate the stored field.

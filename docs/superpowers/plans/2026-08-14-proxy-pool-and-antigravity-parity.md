@@ -156,7 +156,7 @@ package proxy_test
 
 import (
 	"testing"
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 func TestShouldBypassNoProxy(t *testing.T) {
@@ -307,7 +307,7 @@ package translator_test
 
 import (
 	"testing"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/translator"
 )
 
 func TestCloakAntigravityRequest_RenamesAndInjectsDecoys(t *testing.T) {

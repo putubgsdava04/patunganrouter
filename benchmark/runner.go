@@ -47,13 +47,13 @@ type BenchResult struct {
 
 func main() {
 	fmt.Println("==================================================")
-	fmt.Println("🚀 9Router Go Gateway - Native Benchmark Runner")
+	fmt.Println("🚀 patunganrouter Gateway - Native Benchmark Runner")
 	fmt.Println("==================================================")
 
 	cfg := Config{
 		MockPort:    20199,
 		ProxyPort:   20131,
-		DBPath:      filepath.Join(os.TempDir(), "9router_bench.sqlite"),
+		DBPath:      filepath.Join(os.TempDir(), "patunganrouter_bench.sqlite"),
 		APIKey:      "sk-benchmark-native-key",
 		Concurrency: []int{1, 10, 25, 50, 100},
 		Requests:    500,
@@ -73,14 +73,14 @@ func main() {
 	}
 	fmt.Printf("[✓] Benchmark SQLite DB initialized at %s\n", cfg.DBPath)
 
-	// 3. Start 9Router Server
+	// 3. Start patunganrouter Server
 	proxyServer, err := startProxyServer(cfg.ProxyPort, cfg.DBPath)
 	if err != nil {
 		fmt.Printf("❌ Failed to start proxy server: %v\n", err)
 		os.Exit(1)
 	}
 	defer proxyServer.Close()
-	fmt.Printf("[✓] 9Router Proxy running on http://127.0.0.1:%d\n\n", cfg.ProxyPort)
+	fmt.Printf("[✓] patunganrouter Proxy running on http://127.0.0.1:%d\n\n", cfg.ProxyPort)
 
 	time.Sleep(500 * time.Millisecond)
 

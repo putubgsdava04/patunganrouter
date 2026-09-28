@@ -3,8 +3,8 @@ package chat
 import (
 	"net/http"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // HandleCatalogSyncStatus returns current models.dev sync status (GET /api/models/catalog-sync).

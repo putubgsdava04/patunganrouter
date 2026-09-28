@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/updater"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/updater"
 )
 
 func TestHandleVersion(t *testing.T) {

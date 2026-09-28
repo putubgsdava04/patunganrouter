@@ -5,7 +5,7 @@ import (
 
 	"github.com/samber/lo"
 
-	"9router/proxy/internal/models"
+	"patunganrouter/proxy/internal/models"
 )
 
 func TestConnIdentityKV(t *testing.T) {

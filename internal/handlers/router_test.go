@@ -13,9 +13,9 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"9router/proxy/internal/auth"
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/dbtest"
+	"patunganrouter/proxy/internal/auth"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/dbtest"
 )
 
 func setupTestDB(t *testing.T) (*sql.DB, func()) {

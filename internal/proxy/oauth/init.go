@@ -3,7 +3,7 @@ package oauth
 import (
 	"time"
 
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // RegisterAll registers all built-in OAuth refreshers.

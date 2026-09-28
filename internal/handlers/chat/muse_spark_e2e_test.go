@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/proxy/executor"
 )
 
 func TestIntegration_OpenCode_MuseSpark_Messages(t *testing.T) {

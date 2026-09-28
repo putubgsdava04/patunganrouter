@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/models"
+	"patunganrouter/proxy/internal/models"
 )
 
 func testUsageConn(provider, authType string) *models.ProviderConnection {

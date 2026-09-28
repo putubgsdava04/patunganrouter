@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/proxy"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/translator"
 )
 
 // ForwardGemini forwards to gemini-native endpoints (antigravity).

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/db"
 )
 
 func TestHandleDeviceStart_qoderLocal(t *testing.T) {

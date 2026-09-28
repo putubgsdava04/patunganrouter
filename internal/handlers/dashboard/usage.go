@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"9router/proxy/internal/fetchgate"
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/fetchgate"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 // quotaFetchGate paces every live quota read this handler makes (issue #30).

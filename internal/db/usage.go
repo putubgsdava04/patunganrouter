@@ -30,7 +30,7 @@ func (r *Repo) InsertUsageHistory(provider, model, connectionID, apiKey, endpoin
 }
 
 // UpsertUsageDaily inserts or replaces a daily usage aggregation record.
-// The data parameter should be a JSON string matching the 9router-go daily aggregation format.
+// The data parameter should be a JSON string matching the patunganrouter daily aggregation format.
 // NOTE: INSERT OR REPLACE is an atomic full-row replace of the pre-merged JSON
 // blob. Merging happens in-process (see handlers/chat/usage.go dailyUsageMu), so
 // concurrent writers from MULTIPLE processes can still clobber each other. This

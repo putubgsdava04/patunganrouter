@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	"9router/proxy/internal/constants"
+	"patunganrouter/proxy/internal/constants"
 )
 
 // FallbackTransport intercepts outbound HTTP requests and automatically retries

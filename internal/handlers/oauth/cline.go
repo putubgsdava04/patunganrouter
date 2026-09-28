@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/log"
 )
 
 var (

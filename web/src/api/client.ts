@@ -1,4 +1,4 @@
-// Typed API client for 9router-go Native Dashboard
+// Typed API client for patunganrouter Native Dashboard
 
 export interface ProviderConnection {
   id: string
@@ -312,7 +312,7 @@ export interface LoginResponse {
 
 export function isAuthenticated(): boolean {
   if (typeof window === 'undefined') return false
-  if (sessionStorage.getItem('9router_auth') === 'true' || localStorage.getItem('9router_auth') === 'true') {
+  if (sessionStorage.getItem('patunganrouter_auth') === 'true' || localStorage.getItem('patunganrouter_auth') === 'true') {
     return true
   }
   if (typeof document !== 'undefined' && document.cookie.includes('auth_token=')) {
@@ -329,7 +329,7 @@ export function isUsableAPIKey(value: string): boolean {
 
 export function getStoredAPIKey(): string {
   if (typeof localStorage === 'undefined') return ''
-  const value = (localStorage.getItem('9router_key') || '').trim()
+  const value = (localStorage.getItem('patunganrouter_key') || '').trim()
   return isUsableAPIKey(value) ? value : ''
 }
 
@@ -414,11 +414,11 @@ export function handleUnauthorized(path?: string) {
 
   // Clear stale local auth session tokens and invalid stored keys
   if (typeof sessionStorage !== 'undefined') {
-    sessionStorage.removeItem('9router_auth')
+    sessionStorage.removeItem('patunganrouter_auth')
   }
   if (typeof localStorage !== 'undefined') {
-    localStorage.removeItem('9router_auth')
-    localStorage.removeItem('9router_key')
+    localStorage.removeItem('patunganrouter_auth')
+    localStorage.removeItem('patunganrouter_key')
   }
 
   // Debounce multiple concurrent 401 responses
@@ -858,7 +858,7 @@ export const api = {
       }
     } catch {}
     try {
-      const res = await fetch('https://raw.githubusercontent.com/luqman-v1/9router-go/main/CHANGELOG.md')
+      const res = await fetch('https://raw.githubusercontent.com/putubgsdava04/patunganrouter/main/CHANGELOG.md')
       if (res.ok) {
         const text = await res.text()
         if (text && text.trim().length > 0) return text
@@ -1007,7 +1007,7 @@ export const api = {
 
   // CLI Tools status
   getCliToolsStatuses: () =>
-    request<Record<string, { installed?: boolean; version?: string | null; has9Router?: boolean } | null>>(
+    request<Record<string, { installed?: boolean; version?: string | null; hasRouter?: boolean } | null>>(
       '/api/cli-tools/all-statuses'
     ).catch(() => ({})),
   // Auth
@@ -1049,8 +1049,8 @@ export const api = {
       const data = await res.json()
       // The server sets the httpOnly auth_token cookie; this flag only drives
       // the client-side gate (isAuthenticated) since JS cannot read it.
-      sessionStorage.setItem('9router_auth', 'true')
-      localStorage.setItem('9router_auth', 'true')
+      sessionStorage.setItem('patunganrouter_auth', 'true')
+      localStorage.setItem('patunganrouter_auth', 'true')
       return { success: true, mustChangePassword: !!data.mustChangePassword }
     }
     let errText = 'Invalid password'
@@ -1079,7 +1079,7 @@ export const api = {
     try {
       await fetch('/api/auth/logout', { method: 'POST' })
     } catch {}
-    sessionStorage.removeItem('9router_auth')
-    localStorage.removeItem('9router_auth')
+    sessionStorage.removeItem('patunganrouter_auth')
+    localStorage.removeItem('patunganrouter_auth')
   },
 }

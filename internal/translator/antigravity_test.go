@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/translator"
 )
 
 func TestCloakAntigravityRequest_WebSearchGetsRenamed(t *testing.T) {

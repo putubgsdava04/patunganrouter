@@ -8,7 +8,7 @@ import (
 
 const antigravityIDEVersion = "1.23.2"
 
-// HandleAntigravity intercepts Antigravity Gemini-native requests and forwards to 9router.
+// HandleAntigravity intercepts Antigravity Gemini-native requests and forwards to patunganrouter.
 // It preserves client identity for catalog requests (fetchAvailableModels) and only
 // overrides IDE version for generation endpoints (:generateContent/:streamGenerateContent)
 // to keep compatibility while letting the IDE see new models (#3414).

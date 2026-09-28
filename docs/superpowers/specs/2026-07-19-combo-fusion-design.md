@@ -1,6 +1,6 @@
 # Combo Fusion — Parallel Multi-Model + Judge Synthesis
 
-> **Design doc for combo fusion feature in 9router-go.**
+> **Design doc for combo fusion feature in patunganrouter.**
 > Reference: 9router-js `open-sse/services/combo.js` `handleFusionChat()`
 
 ## Goal

@@ -3,7 +3,7 @@ package app
 import (
 	"go.uber.org/fx"
 
-	"9router/proxy/internal/config"
+	"patunganrouter/proxy/internal/config"
 )
 
 // ConfigModule loads config.Config, provides *viper.Viper, and provides CLI/environment parameters.

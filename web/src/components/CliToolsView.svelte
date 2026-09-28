@@ -32,7 +32,7 @@
     onRefresh
   }: Props = $props()
 
-  let statuses = $state<Record<string, { installed?: boolean; version?: string | null; has9Router?: boolean } | null>>({})
+  let statuses = $state<Record<string, { installed?: boolean; version?: string | null; hasRouter?: boolean } | null>>({})
   let isLoading = $state(true)
   let searchQuery = $state('')
   let activeCategory = $state<'all' | 'cli' | 'ide' | 'mitm'>('all')
@@ -86,13 +86,13 @@
       configType: 'env',
       envVars: {
         ANTHROPIC_BASE_URL: `${localOrigin}`,
-        ANTHROPIC_API_KEY: 'sk-9router-local-token',
+        ANTHROPIC_API_KEY: 'sk-patunganrouter-local-token',
       },
       instructions: [
         `Add to your shell profile (~/.zshrc or ~/.bashrc):`,
         `export ANTHROPIC_BASE_URL="${localOrigin}"`,
         `export ANTHROPIC_API_KEY="<your-api-key>"`,
-        `Run 'claude' in any directory to start coding with 9router-go routing.`,
+        `Run 'claude' in any directory to start coding with patunganrouter routing.`,
       ],
     },
     {
@@ -105,7 +105,7 @@
       configType: 'settings',
       instructions: [
         'Open Cursor Settings > Models.',
-        `Under OpenAI API Key: enter your 9router-go API Key.`,
+        `Under OpenAI API Key: enter your patunganrouter API Key.`,
         `Click Override OpenAI Base URL and enter: ${localOrigin}/v1`,
         'Enable your favorite models in the Cursor model list.',
       ],
@@ -122,7 +122,7 @@
         'Open Cline extension settings in VS Code.',
         'Select API Provider: "OpenAI Compatible".',
         `Set Base URL: ${localOrigin}/v1`,
-        'Set API Key: enter your 9router-go API Key.',
+        'Set API Key: enter your patunganrouter API Key.',
         'Set Model ID: choose any configured model or combo.',
       ],
     },
@@ -136,7 +136,7 @@
       configType: 'mitm',
       instructions: [
         'Antigravity MITM intercepts Google Cloud Code PA traffic transparently.',
-        `Point HTTP_PROXY or system proxy to 9router-go on port 20130.`,
+        `Point HTTP_PROXY or system proxy to patunganrouter on port 20130.`,
         'All tools with _ide suffixes will be seamlessly uncloaked and routed to configured connections.',
       ],
     },
@@ -150,7 +150,7 @@
       configType: 'mitm',
       instructions: [
         'Kiro MITM captures telemetry and auth token exchanges.',
-        `Ensure Kiro network routing directs through 9router-go gateway.`,
+        `Ensure Kiro network routing directs through patunganrouter gateway.`,
       ],
     },
     {
@@ -163,7 +163,7 @@
       configType: 'env',
       envVars: {
         OPENAI_BASE_URL: `${localOrigin}/v1`,
-        OPENAI_API_KEY: 'sk-9router-local-token',
+        OPENAI_API_KEY: 'sk-patunganrouter-local-token',
       },
       instructions: [
         `export OPENAI_BASE_URL="${localOrigin}/v1"`,
@@ -193,7 +193,7 @@
       configType: 'env',
       envVars: {
         DROID_BASE_URL: `${localOrigin}/v1`,
-        DROID_API_KEY: 'sk-9router-local-token',
+        DROID_API_KEY: 'sk-patunganrouter-local-token',
       },
       instructions: [
         `export DROID_BASE_URL="${localOrigin}/v1"`,
@@ -210,7 +210,7 @@
       configType: 'env',
       envVars: {
         DEVIN_BASE_URL: `${localOrigin}/v1`,
-        DEVIN_API_KEY: 'sk-9router-local-token',
+        DEVIN_API_KEY: 'sk-patunganrouter-local-token',
       },
       instructions: [
         `export DEVIN_BASE_URL="${localOrigin}/v1"`,
@@ -227,7 +227,7 @@
       configType: 'env',
       envVars: {
         HERMES_BASE_URL: `${localOrigin}/v1`,
-        HERMES_API_KEY: 'sk-9router-local-token',
+        HERMES_API_KEY: 'sk-patunganrouter-local-token',
       },
       instructions: [
         `export HERMES_BASE_URL="${localOrigin}/v1"`,
@@ -295,7 +295,7 @@
       color: '#D97757',
       configType: 'settings',
       instructions: [
-        'Add 9router-go MCP servers to your claude_desktop_config.json.',
+        'Add patunganrouter MCP servers to your claude_desktop_config.json.',
         `Point MCP endpoints to ${localOrigin}/v1.`,
       ],
     },
@@ -310,7 +310,7 @@
       instructions: [
         'In Roo Code provider settings, select OpenAI Compatible.',
         `Base URL: ${localOrigin}/v1`,
-        'API Key: enter your 9router-go key.',
+        'API Key: enter your patunganrouter key.',
       ],
     },
     {
@@ -333,7 +333,7 @@
       category: 'cli',
       image: '/providers/amp.png',
       color: '#F97316',
-      description: 'Sourcegraph Amp coding assistant CLI with 9router-go model aliases',
+      description: 'Sourcegraph Amp coding assistant CLI with patunganrouter model aliases',
       configType: 'guide',
       instructions: [
         `export OPENAI_BASE_URL="${localOrigin}/v1"`,
@@ -376,8 +376,8 @@
       description: 'High-performance Rust-based coding agent harness',
       configType: 'env',
       instructions: [
-        `export JCODE_9ROUTER_API_KEY="<your-api-key>"`,
-        `Configure [[providers.9router]] with base_url = "${localOrigin}/v1"`,
+        `export JCODE_PATUNGANROUTER_API_KEY="<your-api-key>"`,
+        `Configure [[providers.patunganrouter]] with base_url = "${localOrigin}/v1"`,
       ],
     },
     {
@@ -391,7 +391,7 @@
       instructions: [
         `/plugin marketplace add manalkaff/opendesign`,
         `/plugin install opendesign@opendesign`,
-        `Inherits host agent's model config via 9router-go.`,
+        `Inherits host agent's model config via patunganrouter.`,
       ],
     },
   ])
@@ -422,7 +422,7 @@
       return { label: 'Guide', cls: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20' }
     }
     if (s.installed) {
-      if (s.has9Router) {
+      if (s.hasRouter) {
         return { label: 'Connected', cls: 'bg-success/10 text-success border-success/20' }
       }
       return { label: 'Not configured', cls: 'bg-warning/10 text-warning border-warning/20' }
@@ -444,7 +444,7 @@
             CLI & IDE Tools
           </h1>
           <p class="font-body text-xs sm:text-sm text-text-muted">
-            Configure Cursor, Claude Code, Cline, and terminal agents to connect to 9router-go
+            Configure Cursor, Claude Code, Cline, and terminal agents to connect to patunganrouter
           </p>
         </div>
       </div>

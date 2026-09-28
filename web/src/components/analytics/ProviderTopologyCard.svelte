@@ -469,13 +469,13 @@
     >
       <img
         src="/favicon.svg"
-        alt="9router-go"
+        alt="patunganrouter"
         class="w-6 h-6 mr-2 object-contain {activeCount > 0 ? 'topology-router-icon' : ''}"
         loading="lazy"
         decoding="async"
       />
       <span class="text-sm font-bold {activeCount > 0 ? 'topology-router-label text-yellow-300' : 'text-primary'}">
-        9router-go
+        patunganrouter
       </span>
       {#if activeCount > 0}
         <span class="ml-2 px-1.5 py-0.5 rounded-full bg-yellow-400 text-black text-xs font-bold topology-router-badge">

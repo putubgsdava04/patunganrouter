@@ -1,7 +1,7 @@
 package chat
 
 import (
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/log"
 	"bytes"
 	"context"
 	"crypto/sha256"
@@ -15,9 +15,9 @@ import (
 	"sync"
 	"time"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/translator"
 )
 
 // MiMo anti-abuse: the free chat endpoint returns 403 "Illegal access"

@@ -38,7 +38,7 @@
   })
   $effect(() => {
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('9router-theme') || localStorage.getItem('theme')
+      const stored = localStorage.getItem('patunganrouter-theme') || localStorage.getItem('theme')
       if (stored === 'light') {
         isDark = false
       } else if (stored === 'dark') {
@@ -53,7 +53,7 @@
   function applyTheme(dark: boolean) {
     document.documentElement.classList.toggle('dark', dark)
     document.documentElement.classList.toggle('light', !dark)
-    localStorage.setItem('9router-theme', dark ? 'dark' : 'light')
+    localStorage.setItem('patunganrouter-theme', dark ? 'dark' : 'light')
     localStorage.setItem('theme', dark ? 'dark' : 'light')
   }
 
@@ -159,7 +159,7 @@
     },
     skills: {
       title: 'Agent Skills',
-      description: 'Copy a link and paste to your AI to use 9router-go — no install needed',
+      description: 'Copy a link and paste to your AI to use patunganrouter — no install needed',
       icon: 'extension',
     },
     'console-log': {
@@ -273,7 +273,7 @@
         type="button"
         onclick={promptInstall}
         class="flex items-center gap-1.5 px-2.5 h-8 rounded-lg border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors text-xs font-medium cursor-pointer"
-        title="Install 9router-go Desktop App"
+        title="Install patunganrouter Desktop App"
         aria-label="Install App"
       >
         <span class="material-symbols-outlined text-[18px]">install_desktop</span>
@@ -411,7 +411,7 @@
       <div class="flex items-center justify-between pb-3 border-b border-border-subtle">
         <h2 class="text-lg font-semibold text-text-main flex items-center gap-2">
           <span class="material-symbols-outlined text-pink-500">volunteer_activism</span>
-          Support 9router-go
+          Support patunganrouter
         </h2>
         <button
           type="button"
@@ -424,12 +424,12 @@
       </div>
 
       <p class="text-sm text-text-muted leading-relaxed">
-        9router-go is a fast, lightweight and open-source high-throughput AI gateway in Go. If 9router-go saves you time and tokens, consider supporting the project!
+        patunganrouter is a fast, lightweight and open-source high-throughput AI gateway in Go. If patunganrouter saves you time and tokens, consider supporting the project!
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <a
-          href="https://github.com/luqman-v1/9router-go"
+          href="https://github.com/putubgsdava04/patunganrouter"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center gap-3 p-3.5 rounded-xl border border-border-subtle bg-surface-2 hover:border-brand-500/40 transition-all group"
@@ -446,7 +446,7 @@
         </a>
 
         <a
-          href="https://github.com/luqman-v1/9router-go/releases"
+          href="https://github.com/putubgsdava04/patunganrouter/releases"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center gap-3 p-3.5 rounded-xl border border-border-subtle bg-surface-2 hover:border-pink-500/40 transition-all group"

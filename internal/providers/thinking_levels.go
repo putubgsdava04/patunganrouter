@@ -7,7 +7,7 @@ import (
 )
 
 // Thinking levels are the selectable values of the dashboard's
-// "Thinking: <level>" picker and the `(level)` suffix 9router accepts on a
+// "Thinking: <level>" picker and the `(level)` suffix patunganrouter accepts on a
 // model id. This is the Go port of open-sse/providers/thinkingLevels.js:
 // the level set is a function of the model's capabilities, refined by a
 // model-name pattern table and by whether thinking can be switched off.
@@ -104,7 +104,7 @@ var codexModelThinkingLevels = map[string][]string{
 }
 
 // codexModelLevels returns the registry-declared levels for a Codex model, with
-// any trailing "(level)" override stripped first — the suffix is a 9router
+// any trailing "(level)" override stripped first — the suffix is a patunganrouter
 // request override, not part of the model id.
 func codexModelLevels(provider, model string) []string {
 	if provider != "codex" {

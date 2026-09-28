@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/db"
 )
 
 func TestCallbackRedirectURIFor(t *testing.T) {

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/db"
 )
 
 func setupOAuthTestDB(t *testing.T) (*sql.DB, func()) {

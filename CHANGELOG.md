@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+### 🏷️ Rebranded `9router-go` → `patunganrouter`
+
+- **Full project rename** so this fork no longer masquerades as upstream: the binary and CLI command are now `patunganrouter` (`cmd/patunganrouter/`), the Go module is `patunganrouter/proxy`, the Docker image is `ghcr.io/putubgsdava04/patunganrouter`, and all release assets are named `patunganrouter-<os>-<arch>`.
+- **Data location moved** from `~/.9router` (and `%APPDATA%/9router`) to `~/.patunganrouter` (and `%APPDATA%/patunganrouter`); the legacy `9router.db` fallback filename was renamed to `patunganrouter.db`. Set `DATA_DIR` explicitly to reuse an existing upstream data directory.
+- **Dashboard storage keys renamed** — `9router_auth`, `9router_key`, `9router-theme`, the OAuth BroadcastChannel `9router-oauth` and the `9router.oauth.*` handoff entries are now `patunganrouter*`. The matching server-side OAuth callback template was updated in lockstep.
+- **Upstream references intentionally preserved.** Citations to `decolua/9router` (parity baseline, port provenance comments, the SkillsView skill catalog, and `CHANGELOG.md` history) are unchanged — they identify the behavioral specification, not this project.
+
 ### 🐛 Issue #41 — `stream:false` to kiro and qoder was answered with an event stream
 
 - 🔴 **kiro never looked at the request.** `ForwardKiro` called `handleKiroStream` unconditionally while every sibling executor — qoder, iflow, kimchi, commandcode — branches on `req.IsStream`; `handleKiroStream` hardcodes `Content-Type: text/event-stream` and flushes `data: {...}` frames. A client that asked for JSON got SSE, and `JSON.parse` died on the first `d` of `data:`. Reproduced here before the fix: `Content-Type = "text/event-stream"`, `jsontext: invalid character 'd'`.

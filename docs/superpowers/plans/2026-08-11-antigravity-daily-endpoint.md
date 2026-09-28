@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Do not modify Next.js configurations; focus strictly on `9router-go`.
+- Do not modify Next.js configurations; focus strictly on `patunganrouter`.
 - Ensure tests still pass after changing URL constants.
 
 ---

@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/constants"
+	"patunganrouter/proxy/internal/constants"
 )
 
 // StartupTimeout is how long start waits for the proxy to stay up.

@@ -13,8 +13,8 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/proxy/executor"
 	_ "modernc.org/sqlite"
 )
 
@@ -23,7 +23,7 @@ func getRealUserDB(t *testing.T) (*db.Repo, func()) {
 	if err != nil {
 		t.Skip("cannot get user home dir")
 	}
-	dbPath := filepath.Join(home, ".9router", "db", "data.sqlite")
+	dbPath := filepath.Join(home, ".patunganrouter", "db", "data.sqlite")
 	if _, err := os.Stat(dbPath); os.IsNotExist(err) {
 		t.Skipf("real db not found at %s", dbPath)
 	}

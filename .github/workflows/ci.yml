@@ -46,25 +46,25 @@ jobs:
         run: go test ./... -v
 
       # The binary is built with Go's default -pgo=auto, which silently stops
-      # applying cmd/9router-go/default.pgo the moment that file is renamed,
+      # applying cmd/patunganrouter/default.pgo the moment that file is renamed,
       # gitignored, .dockerignore'd, or a -pgo=off flag creeps in. Nothing about
       # the build would fail — it would just quietly get slower, so the flag is
       # asserted here instead of trusted.
       - name: Build
-        run: go build -ldflags="-s -w" -o /tmp/9router-go ./cmd/9router-go/
+        run: go build -ldflags="-s -w" -o /tmp/patunganrouter ./cmd/patunganrouter/
 
       - name: Assert PGO is applied
         run: |
-          go version -m /tmp/9router-go | grep -q -- '-pgo=' || {
+          go version -m /tmp/patunganrouter | grep -q -- '-pgo=' || {
             echo "::error::PGO profile not applied to the release binary."
-            echo "Check that cmd/9router-go/default.pgo is committed and that"
+            echo "Check that cmd/patunganrouter/default.pgo is committed and that"
             echo "no build step passes -pgo=off."
             exit 1
           }
-          go version -m /tmp/9router-go | grep -- '-pgo='
+          go version -m /tmp/patunganrouter | grep -- '-pgo='
 
   # The Dockerfile was only ever built by release.yml, on a tag. Every breakage
-  # it can suffer — a .dockerignore entry that swallows cmd/9router-go/, a
+  # it can suffer — a .dockerignore entry that swallows cmd/patunganrouter/, a
   # go.mod bump that misses a stage, web/embed.go failing on a missing dist —
   # stayed invisible until a release, where the only fix is re-tagging. This
   # job builds the image on every PR and pushes nothing.
@@ -82,7 +82,7 @@ jobs:
           context: .
           platforms: linux/amd64
           load: true
-          tags: 9router-go:ci
+          tags: patunganrouter:ci
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -93,13 +93,13 @@ jobs:
       # Docker build context.
       - name: Assert PGO survived the Docker build context
         run: |
-          cid=$(docker create 9router-go:ci)
-          docker cp "$cid":/usr/local/bin/9router-go /tmp/from-image
+          cid=$(docker create patunganrouter:ci)
+          docker cp "$cid":/usr/local/bin/patunganrouter /tmp/from-image
           docker rm "$cid" >/dev/null
           go version -m /tmp/from-image | grep -q -- '-pgo=' || {
             echo "::error::PGO profile missing inside the Docker image."
             echo "Check .dockerignore for an entry that would drop"
-            echo "cmd/9router-go/default.pgo from the build context."
+            echo "cmd/patunganrouter/default.pgo from the build context."
             exit 1
           }
           go version -m /tmp/from-image | grep -- '-pgo='

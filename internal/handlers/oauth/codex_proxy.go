@@ -12,8 +12,8 @@ import (
 	"syscall"
 	"time"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/log"
 )
 
 // Codex's public OAuth client (app_EMoamEEZ73f0CkXaXp7hrann, the Codex CLI) has

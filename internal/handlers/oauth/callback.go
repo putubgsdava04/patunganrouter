@@ -15,7 +15,7 @@ const callbackPage = `<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>9router — OAuth callback</title>
+<title>patunganrouter — OAuth callback</title>
 <style>
 :root{color-scheme:dark}
 body{background:#0b0e14;color:#e6e9f0;font-family:ui-sans-serif,system-ui,sans-serif;margin:0;padding:32px 16px}
@@ -38,7 +38,7 @@ ol li{margin:4px 0}
 </head>
 <body>
 <div class="card">
-<h1>9router — OAuth callback</h1>
+<h1>patunganrouter — OAuth callback</h1>
 <p class="sub" id="status">Memproses…</p>
 <textarea id="code" readonly placeholder="(no code in URL)"></textarea>
 <div class="row">
@@ -57,7 +57,7 @@ ol li{margin:4px 0}
 (function(){
   function $(id){return document.getElementById(id)}
   var statusEl=$("status"), codeEl=$("code"), metaEl=$("meta");
-  var CB_KEY="9router.oauth.callback.v1", CB_CHANNEL="9router-oauth";
+  var CB_KEY="patunganrouter.oauth.callback.v1", CB_CHANNEL="patunganrouter-oauth";
   var q=new URLSearchParams(location.search);
   var h=new URLSearchParams(location.hash.replace(/^#/,""));
   function pick(k){return q.get(k)||h.get(k)||""}

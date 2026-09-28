@@ -443,10 +443,10 @@
         }
         return
       }
-      if (e.data?.type === '9router-oauth-success' && e.data?.provider === 'antigravity') {
+      if (e.data?.type === 'patunganrouter-oauth-success' && e.data?.provider === 'antigravity') {
         showOAuthModal = false
         onRefresh()
-      } else if (e.data?.type === '9router-oauth-error' && e.data?.provider === 'antigravity') {
+      } else if (e.data?.type === 'patunganrouter-oauth-error' && e.data?.provider === 'antigravity') {
         oauthError = `Login failed: ${e.data.error || 'Unknown error'}`
       }
     }

@@ -1,7 +1,7 @@
 # Antigravity Endpoint Migration to Daily Environment
 
 ## 1. Purpose
-The `9router-go` proxy is currently hitting severe rate limits (HTTP 429) when routing requests to the `antigravity` (Google Cloud Code) provider, particularly when used by autonomous agents like Claude Code. This happens even with 4 accounts configured in round-robin mode. The legacy Next.js codebase successfully used a staging/daily endpoint which proved more resilient to agent-level request volumes.
+The `patunganrouter` proxy is currently hitting severe rate limits (HTTP 429) when routing requests to the `antigravity` (Google Cloud Code) provider, particularly when used by autonomous agents like Claude Code. This happens even with 4 accounts configured in round-robin mode. The legacy Next.js codebase successfully used a staging/daily endpoint which proved more resilient to agent-level request volumes.
 
 ## 2. Analysis & Constraints
 - **Round-Robin is Working:** The logs confirm that the proxy correctly iterates through all 4 configured connections (`8d911ff1`, `6b4a14b4`, `e3479d23`, `f18d7ab2`). All 4 hit a 429 limit almost immediately.

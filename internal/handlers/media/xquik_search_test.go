@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlers/chat"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlers/chat"
 )
 
 func TestXquikSearch_Success(t *testing.T) {

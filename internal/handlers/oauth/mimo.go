@@ -17,7 +17,7 @@ import (
 	"runtime"
 	"strings"
 
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 var (
@@ -33,7 +33,7 @@ func (h *OAuthHandler) HandleMimoAuthorize(w http.ResponseWriter, r *http.Reques
 	if keyName == "" {
 		hn, _ := os.Hostname()
 		sum := sha256.Sum256([]byte(runtime.GOOS + "-" + hn))
-		keyName = fmt.Sprintf("9router-xmd-%x", sum[:4])
+		keyName = fmt.Sprintf("patunganrouter-xmd-%x", sum[:4])
 	}
 	priv, err := ecdh.X25519().GenerateKey(rand.Reader)
 	if err != nil {

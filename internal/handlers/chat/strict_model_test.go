@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/models"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/models"
 )
 
 func TestFilterConnectionsForModel_Conditions(t *testing.T) {

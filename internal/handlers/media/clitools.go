@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 // cliStatus is the per-tool installed/version shape the dashboard expects

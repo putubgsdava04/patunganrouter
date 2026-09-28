@@ -1,14 +1,14 @@
-BINARY_NAME := 9router-go
+BINARY_NAME := patunganrouter
 # Central version — single source: VERSION file, fallback to version.json, then git
 VERSION ?= $(shell cat VERSION 2>/dev/null || (cat version.json 2>/dev/null | grep -o '"latestVersion": *"[^"]*"' | cut -d'"' -f4) || git describe --tags --always 2>/dev/null || echo "1.0.0")
 PORT ?= 20130
-DATA_DIR ?= $(HOME)/.9router
+DATA_DIR ?= $(HOME)/.patunganrouter
 RTK ?=
 CAVEMAN ?=
 PONYTAIL ?=
 AUTO_UPDATE ?= false
 
-LDFLAGS := -s -w -X '9router/proxy/internal/updater.CurrentVersion=$(VERSION)'
+LDFLAGS := -s -w -X 'patunganrouter/proxy/internal/updater.CurrentVersion=$(VERSION)'
 
 .PHONY: build run dev version update test test-short vet bench bench-go cross mitm-enable mitm-disable mitm-status docker docker-build clean help web-build web-dev
 
@@ -21,7 +21,7 @@ web-build:
 
 ## build — compile binary with version embedding
 build: web-build
-	go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME) ./cmd/9router-go/
+	go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME) ./cmd/patunganrouter/
 
 ## run — start proxy (PORT=20130)
 run: build
@@ -29,7 +29,7 @@ run: build
 
 ## dev — start with go run (auto-rebuild)
 dev:
-	PORT=$(PORT) DATA_DIR=$(DATA_DIR) go run -ldflags="$(LDFLAGS)" ./cmd/9router-go/ $(if $(RTK),--rtk=$(RTK)) $(if $(CAVEMAN),--caveman=$(CAVEMAN)) $(if $(PONYTAIL),--ponytail=$(PONYTAIL)) --auto-update=$(AUTO_UPDATE)
+	PORT=$(PORT) DATA_DIR=$(DATA_DIR) go run -ldflags="$(LDFLAGS)" ./cmd/patunganrouter/ $(if $(RTK),--rtk=$(RTK)) $(if $(CAVEMAN),--caveman=$(CAVEMAN)) $(if $(PONYTAIL),--ponytail=$(PONYTAIL)) --auto-update=$(AUTO_UPDATE)
 
 ## web-dev — Vite dev server (HMR) on :5173, API proxied to Go :20130. FE changes hot-reload without rebuilding the binary.
 web-dev:
@@ -65,11 +65,11 @@ bench-go:
 
 ## cross — cross-compile Linux/macOS/Windows release binaries
 cross: web-build
-	GOOS=linux GOARCH=amd64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-linux-amd64 ./cmd/9router-go/
-	GOOS=linux GOARCH=arm64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-linux-arm64 ./cmd/9router-go/
-	GOOS=darwin GOARCH=amd64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-darwin-amd64 ./cmd/9router-go/
-	GOOS=darwin GOARCH=arm64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-darwin-arm64 ./cmd/9router-go/
-	GOOS=windows GOARCH=amd64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-windows-amd64.exe ./cmd/9router-go/
+	GOOS=linux GOARCH=amd64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-linux-amd64 ./cmd/patunganrouter/
+	GOOS=linux GOARCH=arm64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-linux-arm64 ./cmd/patunganrouter/
+	GOOS=darwin GOARCH=amd64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-darwin-amd64 ./cmd/patunganrouter/
+	GOOS=darwin GOARCH=arm64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-darwin-arm64 ./cmd/patunganrouter/
+	GOOS=windows GOARCH=amd64 go build -ldflags="$(LDFLAGS)" -o $(BINARY_NAME)-windows-amd64.exe ./cmd/patunganrouter/
 	@ls -lh $(BINARY_NAME)-*
 	@(sha256sum $(BINARY_NAME)-linux-amd64 $(BINARY_NAME)-linux-arm64 $(BINARY_NAME)-darwin-amd64 $(BINARY_NAME)-darwin-arm64 $(BINARY_NAME)-windows-amd64.exe 2>/dev/null || shasum -a 256 $(BINARY_NAME)-linux-amd64 $(BINARY_NAME)-linux-arm64 $(BINARY_NAME)-darwin-amd64 $(BINARY_NAME)-darwin-arm64 $(BINARY_NAME)-windows-amd64.exe) > SHA256SUMS.txt
 	@cat SHA256SUMS.txt
@@ -101,7 +101,7 @@ clean:
 
 ## help — show targets
 help:
-	@echo "9router-go — Makefile targets:"
+	@echo "patunganrouter — Makefile targets:"
 	@grep -E '^## ' Makefile | sed 's/## /  make /' | sed 's/ — /  /'
 	@echo ""
 	@echo "Options:"

@@ -1,6 +1,6 @@
 # Build artifacts
-/9router-go
-/9router-go-*
+/patunganrouter
+/patunganrouter-*
 /SHA256SUMS.txt
 *.exe
 web/dist/
@@ -14,7 +14,7 @@ web/dist/
 /tmp/*.log
 
 # Data directory
-.9router/
+.patunganrouter/
 data/
 
 # Local overrides

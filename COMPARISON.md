@@ -1,10 +1,10 @@
-# 9router-go vs Historical Upstream 9Router
+# patunganrouter vs Historical Upstream 9Router
 
-This document compares the current native `9router-go` v1.9.1 with the local historical upstream checkout (`decolua/9router` v0.5.85, Next.js dashboard and gateway). It is not a provider-by-provider certification.
+This document compares the current native `patunganrouter` v1.9.1 with the local historical upstream checkout (`decolua/9router` v0.5.85, Next.js dashboard and gateway). It is not a provider-by-provider certification.
 
 ## Version and comparison scope
 
-`9router-go` v1.9.1 is the current release (`VERSION`, `version.json`, `internal/updater.CurrentVersion`). The declared manifest/README sync target is upstream v0.5.85. `CHANGELOG.md` separately records two selected v0.5.86 parity ports and explicitly defers one feature; that does not make the whole v0.5.86 release synced. Treat the release declarations as a known documentation gap until they are reconciled.
+`patunganrouter` v1.9.1 is the current release (`VERSION`, `version.json`, `internal/updater.CurrentVersion`). The declared manifest/README sync target is upstream v0.5.85. `CHANGELOG.md` separately records two selected v0.5.86 parity ports and explicitly defers one feature; that does not make the whole v0.5.86 release synced. Treat the release declarations as a known documentation gap until they are reconciled.
 
 Statuses below mean:
 
@@ -15,7 +15,7 @@ Statuses below mean:
 
 ## Architecture
 
-| Area | Current 9router-go | Historical upstream v0.5.85 | Classification |
+| Area | Current patunganrouter | Historical upstream v0.5.85 | Classification |
 |------|--------------------|-----------------------------|----------------|
 | Runtime | One Go server, default port `20130` | Next.js/Node gateway and dashboard, production port `20128` | Different architecture |
 | Dashboard | Svelte 5 + Vite SPA embedded into the Go binary (`web/`, `web/embed.go`) | Next.js App Router / React dashboard | Current native implementation, not the historical UI |
@@ -62,7 +62,7 @@ These are current native surfaces. The changelog often calls individual ports â€
 
 ## Authentication and operations
 
-| Area | Current 9router-go | Upstream alignment / difference |
+| Area | Current patunganrouter | Upstream alignment / difference |
 |------|--------------------|--------------------------------|
 | Client API auth | SQLite-backed `apiKeys`; proxy routes accept bearer or `X-API-Key`; SSE stream routes also accept query keys | Scoped compatibility, not identical middleware |
 | Dashboard session | HS256 `auth_token` cookie, 24-hour expiry, local CLI token, login lockout/tunnel checks | Mirrors important upstream contracts |

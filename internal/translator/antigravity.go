@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/log"
 )
 
 // maxAntigravityOutputTokens caps generationConfig.maxOutputTokens; Google's

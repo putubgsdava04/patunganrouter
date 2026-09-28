@@ -1,11 +1,11 @@
 services:
-  9router-go:
+  patunganrouter:
     build: .
-    container_name: 9router-go
+    container_name: patunganrouter
     ports:
       - "20130:20130"
     volumes:
-      - 9router-data:/data
+      - patunganrouter-data:/data
     environment:
       - PORT=20130
       - DATA_DIR=/data
@@ -18,4 +18,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  9router-data:
+  patunganrouter-data:

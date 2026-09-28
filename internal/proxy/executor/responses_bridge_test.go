@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/translator"
 )
 
 const chatStreamWithAnswer = "data: {\"id\":\"c1\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"Hel\"}}]}\n\n" +

@@ -10,9 +10,9 @@
 // Storage ciphers (localStorage keys):
 //   pendingKey  -> OAuthPending[]  (written at authorize time)
 //   callbackKey -> OAuthCallback   (written by the /callback page, consumed once)
-export const OAUTH_CHANNEL = '9router-oauth'
-export const OAUTH_PENDING_KEY = '9router.oauth.pending.v1'
-export const OAUTH_CALLBACK_KEY = '9router.oauth.callback.v1'
+export const OAUTH_CHANNEL = 'patunganrouter-oauth'
+export const OAUTH_PENDING_KEY = 'patunganrouter.oauth.pending.v1'
+export const OAUTH_CALLBACK_KEY = 'patunganrouter.oauth.callback.v1'
 // Pending sessions older than this are ignored (stale Login clicks).
 export const PENDING_TTL_MS = 15 * 60 * 1000
 

@@ -1,7 +1,7 @@
 # Design Spec: Combo Strategy Sync & Gemini thought_signature Fix
 
 ## 1. Overview
-This document outlines the design for two major improvements in `9router-go`:
+This document outlines the design for two major improvements in `patunganrouter`:
 1. **Combo Strategy Sync (Option A):** Syncing the intelligence of the Next.js combo strategy (per-combo state, safe auto-switch ordering, comprehensive capability detection) into Golang, while retaining Golang's advanced features like connection locking and nested combos.
 2. **Gemini Proxy Fix:** Fixing the `400 Function call is missing a thought_signature` error encountered when Claude Code hits Gemini models through the router.
 

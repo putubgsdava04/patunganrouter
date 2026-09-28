@@ -12,8 +12,8 @@ import (
 	"sync"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/translator"
 )
 
 const responsesRequestBody = `{"model":"%s","input":[{"type":"message","role":"user","content":[{"type":"input_text","text":"hi"}]}],"stream":true}`

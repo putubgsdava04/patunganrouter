@@ -1,4 +1,4 @@
-// Package log provides a structured logger with levels and context tracing for the 9router proxy.
+// Package log provides a structured logger with levels and context tracing for the patunganrouter proxy.
 //
 // Usage:
 //

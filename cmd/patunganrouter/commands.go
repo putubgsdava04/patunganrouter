@@ -6,7 +6,7 @@ import (
 
 	"github.com/urfave/cli/v2"
 
-	"9router/proxy/internal/mitm"
+	"patunganrouter/proxy/internal/mitm"
 )
 
 func resolveDataDir() string {
@@ -16,9 +16,9 @@ func resolveDataDir() string {
 	}
 	home, err := os.UserHomeDir()
 	if err != nil {
-		return ".9router"
+		return ".patunganrouter"
 	}
-	return home + "/.9router"
+	return home + "/.patunganrouter"
 }
 
 func mitmEnable(_ *cli.Context) error {
@@ -27,7 +27,7 @@ func mitmEnable(_ *cli.Context) error {
 	if err := mgr.Enable(); err != nil {
 		return fmt.Errorf("MITM enable failed: %w", err)
 	}
-	fmt.Println("MITM proxy enabled. Intercepted traffic on :443 → 9router proxy.")
+	fmt.Println("MITM proxy enabled. Intercepted traffic on :443 → patunganrouter proxy.")
 	return nil
 }
 

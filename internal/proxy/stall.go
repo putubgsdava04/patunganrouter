@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/shutdown"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/shutdown"
 )
 
 // DefaultStallTimeout is the default maximum idle time (no data) before an SSE

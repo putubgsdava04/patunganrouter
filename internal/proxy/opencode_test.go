@@ -3,7 +3,7 @@ package proxy_test
 import (
 	"testing"
 
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 func TestBuildOpenCodeHeaders(t *testing.T) {

@@ -15,7 +15,7 @@ var inlineImageMime = map[string]string{
 	"webp": "image/webp",
 }
 
-// HandleKiro intercepts Kiro AWS EventStream requests and forwards to 9router.
+// HandleKiro intercepts Kiro AWS EventStream requests and forwards to patunganrouter.
 // It preserves inline images in OpenAI MITM and removes redundant systemPrompt.
 func HandleKiro(w http.ResponseWriter, r *http.Request, body []byte) {
 	var reqBody map[string]any

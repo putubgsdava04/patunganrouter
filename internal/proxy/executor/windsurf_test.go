@@ -12,8 +12,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 // wsContentFrame / wsDoneFrame / wsTrailerFrame build the gRPC-web response

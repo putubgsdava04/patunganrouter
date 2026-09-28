@@ -1,14 +1,14 @@
 package chat
 
 import (
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlers/shared"
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy"
-	"9router/proxy/internal/proxy/executor"
-	"9router/proxy/internal/proxy/oauth"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlers/shared"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/proxy/oauth"
 	json "encoding/json/v2"
 	"fmt"
 	"net/http"

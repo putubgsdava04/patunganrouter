@@ -13,13 +13,13 @@ import (
 	"github.com/urfave/cli/v2"
 	"go.uber.org/fx"
 
-	"9router/proxy/internal/app"
-	"9router/proxy/internal/updater"
+	"patunganrouter/proxy/internal/app"
+	"patunganrouter/proxy/internal/updater"
 )
 
 func main() {
 	app := &cli.App{
-		Name:  "9router-go",
+		Name:  "patunganrouter",
 		Usage: "AI API proxy gateway with token saver features",
 		Flags: []cli.Flag{
 			&cli.BoolFlag{
@@ -55,13 +55,13 @@ func main() {
 				Action: func(cCtx *cli.Context) error {
 					info, err := updater.CheckUpdate(cCtx.Context)
 					if err != nil {
-						fmt.Printf("9router-go version %s (%s/%s)\nUpdate check failed: %v\n", updater.CurrentVersion, runtime.GOOS, runtime.GOARCH, err)
+						fmt.Printf("patunganrouter version %s (%s/%s)\nUpdate check failed: %v\n", updater.CurrentVersion, runtime.GOOS, runtime.GOARCH, err)
 						return nil
 					}
-					fmt.Printf("9router-go version %s (%s/%s)\n", info.CurrentVersion, info.OS, info.Arch)
+					fmt.Printf("patunganrouter version %s (%s/%s)\n", info.CurrentVersion, info.OS, info.Arch)
 					fmt.Printf("Latest version: %s\n", info.LatestVersion)
 					if info.HasUpdate {
-						fmt.Printf("\n🚀 NEW UPDATE AVAILABLE! (%s)\nNotes: %s\nRun '9router-go update' to install.\n", info.LatestVersion, info.ReleaseNotes)
+						fmt.Printf("\n🚀 NEW UPDATE AVAILABLE! (%s)\nNotes: %s\nRun 'patunganrouter update' to install.\n", info.LatestVersion, info.ReleaseNotes)
 					} else {
 						fmt.Println("App is up to date.")
 					}
@@ -78,14 +78,14 @@ func main() {
 						return fmt.Errorf("update check failed: %w", err)
 					}
 					if !info.HasUpdate {
-						fmt.Printf("9router-go is already on the latest version (%s).\n", info.CurrentVersion)
+						fmt.Printf("patunganrouter is already on the latest version (%s).\n", info.CurrentVersion)
 						return nil
 					}
 					fmt.Printf("Downloading update v%s...\n", info.LatestVersion)
 					if err := updater.PerformSelfUpdate(info.DownloadURL, info.SHA256); err != nil {
 						return fmt.Errorf("update failed: %w", err)
 					}
-					fmt.Println("✅ 9router-go updated successfully!")
+					fmt.Println("✅ patunganrouter updated successfully!")
 					return nil
 				},
 			},

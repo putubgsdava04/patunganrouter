@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 // ForwardCodebuddyCN forwards to Tencent CodeBuddy with force-stream

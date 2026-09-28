@@ -43,7 +43,7 @@ Stack **Responses sudah tuntas** — diff 1, 2, 3, dan 4 semuanya terpush, `go b
 
 `POST /v1/responses` ke upstream yang **bukan** Responses-native.
 
-Worktree + branch: `/Users/luqmannul.hakim/gomod/project/9router-go-wt` → `parity/responses-translator`
+Worktree + branch: `/Users/luqmannul.hakim/gomod/project/patunganrouter-wt` → `parity/responses-translator`
 (sudah push ke origin).
 
 | Diff | Isi | Status |
@@ -289,7 +289,7 @@ membaca registry saja dan tidak pernah menyentuh credentials, jadi di sana per-p
 
 Worktree yang dipakai saat stack Responses dikerjakan:
 - tree utama → `main`
-- `../9router-go-wt` → `parity/responses-translator` (semua commit di tabel atas ada di sini)
+- `../patunganrouter-wt` → `parity/responses-translator` (semua commit di tabel atas ada di sini)
 - `.worktrees/fix-usage-animation-edges` → sudah ter-merge
 
 Worktree parity **wajib dibangun ulang** sebelum dipakai: `web/dist` tidak ter-commit,

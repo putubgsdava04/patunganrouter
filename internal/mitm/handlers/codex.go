@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// HandleCodex intercepts Codex CLI requests and forwards to 9router Responses API.
+// HandleCodex intercepts Codex CLI requests and forwards to patunganrouter Responses API.
 func HandleCodex(w http.ResponseWriter, r *http.Request, body []byte) {
 	var reqBody map[string]any
 	if err := json.Unmarshal(body, &reqBody); err != nil {

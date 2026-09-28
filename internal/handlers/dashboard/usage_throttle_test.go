@@ -12,7 +12,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"9router/proxy/internal/fetchgate"
+	"patunganrouter/proxy/internal/fetchgate"
 )
 
 // usageFetchGap is the floor these tests assert on. The production gate is

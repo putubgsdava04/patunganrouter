@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/providers"
 )
 
 func init() {

@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// HandleCursor intercepts Cursor IDE requests and forwards to 9router.
+// HandleCursor intercepts Cursor IDE requests and forwards to patunganrouter.
 func HandleCursor(w http.ResponseWriter, r *http.Request, body []byte) {
 	var reqBody map[string]any
 	if err := json.Unmarshal(body, &reqBody); err != nil {

@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // Upstream tries the Amazon surfaces before the Kiro IDE gateway

@@ -14,8 +14,8 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/config"
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/config"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 var unixTailscaleCandidates = []string{
@@ -152,7 +152,7 @@ func (h *DashboardHandler) HandleTunnelStatus(w http.ResponseWriter, r *http.Req
 
 // HandleTunnelEnable handles POST /api/tunnel/enable.
 func (h *DashboardHandler) HandleTunnelEnable(w http.ResponseWriter, r *http.Request) {
-	writePlainError(w, http.StatusBadRequest, "Cloudflare Tunnel service is not yet supported in 9router-go. Use an external reverse proxy (e.g. ngrok, cloudflared, or caddy) pointing to http://127.0.0.1:20130")
+	writePlainError(w, http.StatusBadRequest, "Cloudflare Tunnel service is not yet supported in patunganrouter. Use an external reverse proxy (e.g. ngrok, cloudflared, or caddy) pointing to http://127.0.0.1:20130")
 }
 
 // HandleTunnelDisable handles POST /api/tunnel/disable.

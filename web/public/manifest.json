@@ -1,6 +1,6 @@
 {
-  "name": "9router-go - High-Throughput AI Gateway",
-  "short_name": "9router-go",
+  "name": "patunganrouter - High-Throughput AI Gateway",
+  "short_name": "patunganrouter",
   "description": "High-throughput AI gateway & infrastructure router in Go",
   "start_url": "/",
   "scope": "/",

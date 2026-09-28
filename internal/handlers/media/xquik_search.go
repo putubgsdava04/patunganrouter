@@ -10,12 +10,12 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/handlers/chat"
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/models"
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/handlers/chat"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/models"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // XquikTweet represents a tweet item returned by Xquik API.

@@ -13,9 +13,9 @@ import (
 	"net/url"
 	"time"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/log"
 )
 
 // OAuthHandler handles OAuth token import and social auth exchange endpoints.

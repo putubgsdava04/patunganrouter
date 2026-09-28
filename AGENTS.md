@@ -1,6 +1,6 @@
-# 9router-go — Team Engineering & AI Collaboration Guidelines
+# patunganrouter — Team Engineering & AI Collaboration Guidelines
 
-This repository (`9router-go`) is the high-performance, native Golang implementation and companion of [**decolua/9router**](https://github.com/decolua/9router).
+This repository (`patunganrouter`) is the high-performance, native Golang implementation and companion of [**decolua/9router**](https://github.com/decolua/9router).
 
 ---
 
@@ -19,7 +19,7 @@ Whenever you implement features, fix bugs, add providers, update routing logic, 
    - Request and response schemas for `/v1/*` (Chat Completions, Messages, Embeddings, Audio, Models).
    - Dashboard endpoints `/api/*` (Connections, Combos, ProxyPools, Settings, ProviderNodes, Usage, Auth).
    - Combo expansion, model fallback, account rotation, and strike-breaker quota handling.
-   - SQLite database compatibility (`~/.9router/db/data.sqlite`).
+   - SQLite database compatibility (`~/.patunganrouter/db/data.sqlite`).
 3. **Changelog Tracking**:
    - When porting features or fixes, reference the upstream commit/issue/PR in `CHANGELOG.md` (e.g. `upstream decolua/9router#4197 parity`).
 
@@ -35,14 +35,14 @@ Some feature issues in this repo are not parity requests against `decolua/9route
 2. **Port the contract, not the code**: endpoints, request/response payloads, error status codes, and filter/sort rules. Never transliterate TypeScript into Go (see §4.A).
 3. **Map by responsibility** — OmniRoute `src/lib/usage/*.ts` → `internal/handlers/dashboard/` + `web/src/api/client.ts`; `open-sse/executors/` → `internal/proxy/executor/`; `src/app/` components → `web/src/`.
 4. **OmniRoute is secondary**. Where it conflicts with `decolua/9router`, the §1 parity rules win; record the deliberate divergence in `CHANGELOG.md`.
-5. **Provider IDs are not portable verbatim.** OmniRoute has its own catalog. Map to `9router-go` provider IDs and obey §3 (strict provider isolation — no cross-provider aliasing or model hijacking).
+5. **Provider IDs are not portable verbatim.** OmniRoute has its own catalog. Map to `patunganrouter` provider IDs and obey §3 (strict provider isolation — no cross-provider aliasing or model hijacking).
 6. **Preserve upstream error semantics.** OmniRoute surfaces typed error classes with explicit status codes (e.g. `409 no_credit`); port that distinction rather than collapsing every upstream failure into one generic error.
 
 ---
 
 ## 2. Architecture & Codebase Mapping
 
-| Upstream Path (`/Users/luqmannul.hakim/htdocs/9router`) | 9router-go Path | Description & Role |
+| Upstream Path (`/Users/luqmannul.hakim/htdocs/9router`) | patunganrouter Path | Description & Role |
 | :--- | :--- | :--- |
 | `open-sse/translator/` | `internal/translator/` | Protocol format converters (OpenAI ↔ Claude Messages ↔ Gemini ↔ Antigravity). |
 | `open-sse/executors/` | `internal/proxy/executor/`, `internal/proxy/` | Upstream provider callers, SSE stream adapters, tool ID repair, cloaking. |
@@ -52,7 +52,7 @@ Some feature issues in this repo are not parity requests against `decolua/9route
 | `src/app/api/` (Next.js API routes) | `internal/handlers/dashboard/`, `internal/handlers/` | Dashboard REST & SSE APIs (connections, combos, proxypools, usage, settings). |
 | `src/lib/db/` | `internal/db/` | SQLite database layer (using pure-Go `modernc.org/sqlite`). |
 | `src/app/` (Next.js React 19 Frontend) | `web/src/` | Dashboard UI: Built with **Svelte 5 + Vite 8**, embedded into the binary via `web/embed.go`. |
-| `cli/` (npm launcher package) | `cmd/9router-go/main.go` | Single-binary CLI launcher and runtime daemon. |
+| `cli/` (npm launcher package) | `cmd/patunganrouter/main.go` | Single-binary CLI launcher and runtime daemon. |
 | `tests/` (Vitest suites) | `*_test.go` | Go unit and integration test suites. |
 
 ---
@@ -218,7 +218,7 @@ Use `net/http/httptest` (`httptest.NewRecorder()`, `httptest.NewRequest()`, and 
 
 The dashboard UI in `web/` is built with **Svelte 5 + Vite 8 + TypeScript + Tailwind CSS**, compiled to `web/dist`, and embedded directly into the Go binary via `embed.go` (`//go:embed all:dist`).
 
-> **Upstream Parity Notice**: While upstream `9router` uses Next.js 16 and React 19 (`useState`, `useEffect`, JSX), `9router-go` uses **Svelte 5**. All UI features, views, and modals from upstream must be ported to idiomatic Svelte 5.
+> **Upstream Parity Notice**: While upstream `9router` uses Next.js 16 and React 19 (`useState`, `useEffect`, JSX), `patunganrouter` uses **Svelte 5**. All UI features, views, and modals from upstream must be ported to idiomatic Svelte 5.
 
 ### A. Svelte 5 Runes (STRICTLY MANDATORY)
 Always write modern Svelte 5 code using Runes. **Never use legacy Svelte 3/4 syntax.**
@@ -284,7 +284,7 @@ Always write modern Svelte 5 code using Runes. **Never use legacy Svelte 3/4 syn
 
 ### B. Upstream React 19 $\rightarrow$ Svelte 5 Porting Matrix
 
-| Upstream Next.js / React 19 | 9router-go Svelte 5 Equivalent |
+| Upstream Next.js / React 19 | patunganrouter Svelte 5 Equivalent |
 | :--- | :--- |
 | `useState(initial)` | `let val = $state(initial)` |
 | `useMemo(() => compute(x), [x])` | `let computed = $derived(compute(x))` |

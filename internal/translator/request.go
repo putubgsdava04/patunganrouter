@@ -1,7 +1,7 @@
 package translator
 
 import (
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/log"
 	"encoding/json/jsontext"
 	json "encoding/json/v2"
 	"fmt"

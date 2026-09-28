@@ -27,7 +27,7 @@
   // operation was cancelled and must not act.
   let shutdownToken = 0
 
-  const INSTALL_CMD = '9router-go update'
+  const INSTALL_CMD = 'patunganrouter update'
 
   marked.setOptions({ gfm: true, breaks: true })
 
@@ -193,7 +193,7 @@
           </div>
           <div>
             <h2 class="text-base font-semibold text-text-main">
-              Update 9router-go{updateInfo?.latestVersion ? ` to v${updateInfo.latestVersion}` : ''}
+              Update patunganrouter{updateInfo?.latestVersion ? ` to v${updateInfo.latestVersion}` : ''}
             </h2>
             <p class="text-xs text-text-muted">
               Current version: v{currentVersion || '1.9.1'}
@@ -305,7 +305,7 @@
       </div>
       <h2 class="text-lg font-semibold text-text-main mb-1">Server Stopped</h2>
       <p class="text-xs text-text-muted mb-4">
-        Now run <code class="px-1.5 py-0.5 rounded bg-surface-2 font-mono text-amber-500">9router-go update</code> in your terminal.
+        Now run <code class="px-1.5 py-0.5 rounded bg-surface-2 font-mono text-amber-500">patunganrouter update</code> in your terminal.
       </p>
       <button
         type="button"

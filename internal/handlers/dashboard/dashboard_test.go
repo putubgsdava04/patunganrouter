@@ -11,8 +11,8 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/models"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/models"
 )
 
 func setupTestDB(t *testing.T) (*db.Repo, func()) {

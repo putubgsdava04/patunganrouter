@@ -3,7 +3,7 @@
   let theme = $state<'light' | 'dark'>('dark')
 
   $effect(() => {
-    const stored = localStorage.getItem('9router-theme')
+    const stored = localStorage.getItem('patunganrouter-theme')
     if (stored === 'light' || stored === 'dark') theme = stored
     apply(theme)
   })
@@ -11,7 +11,7 @@
   function apply(t: 'light' | 'dark') {
     document.documentElement.classList.toggle('dark', t === 'dark')
     document.documentElement.classList.toggle('light', t === 'light')
-    localStorage.setItem('9router-theme', t)
+    localStorage.setItem('patunganrouter-theme', t)
   }
 
   function toggle() {

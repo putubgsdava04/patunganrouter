@@ -1,4 +1,4 @@
-# 9router-go Architecture
+# patunganrouter Architecture
 
 This document describes the current Go implementation. Source code is authoritative when a compatibility statement and local behavior differ.
 
@@ -15,11 +15,11 @@ This document describes the current Go implementation. Source code is authoritat
 
 ```mermaid
 flowchart LR
-    CLI[CLI, SDK, and agent clients] --> GW[9router-go HTTP process]
+    CLI[CLI, SDK, and agent clients] --> GW[patunganrouter HTTP process]
     Browser[Browser] --> SPA[Embedded Svelte 5 SPA]
     SPA --> API[Native Go dashboard API]
 
-    subgraph GW[9router-go HTTP process]
+    subgraph GW[patunganrouter HTTP process]
       SPA
       API
       ENGINE[Routing, translation, provider executors, SSE]
@@ -39,7 +39,7 @@ The Go binary owns proxy routing, dashboard APIs, auth, persistence, OAuth, medi
 
 | Path | Responsibility |
 | --- | --- |
-| `cmd/9router-go/` | CLI parser, commands, signal handling, Fx start/stop |
+| `cmd/patunganrouter/` | CLI parser, commands, signal handling, Fx start/stop |
 | `internal/app/` | Fx modules, dependency graph, server and DB lifecycle |
 | `internal/config/` | Viper/env configuration, data and database path resolution, JWT secret |
 | `internal/handlers/` | Chi route composition, chat, media, OAuth, dashboard, SSO, usage |
@@ -54,7 +54,7 @@ The Go binary owns proxy routing, dashboard APIs, auth, persistence, OAuth, medi
 
 ## Fx lifecycle
 
-`cmd/9router-go/main.go` builds an `urfave/cli` application. The default server action loads CLI parameters and starts `app.AppModule` with `fx.Replace(cliParams)`. Set `FX_LOGGING=true` to enable the console Fx logger; otherwise Fx logging is disabled.
+`cmd/patunganrouter/main.go` builds an `urfave/cli` application. The default server action loads CLI parameters and starts `app.AppModule` with `fx.Replace(cliParams)`. Set `FX_LOGGING=true` to enable the console Fx logger; otherwise Fx logging is disabled.
 
 ```mermaid
 flowchart TD
@@ -219,7 +219,7 @@ Retryable upstream errors are classified from status and text. Capacity/rate-lim
 Consequences:
 
 - A fresh empty file is now a supported bootstrap path; existing databases are untouched (columns backfilled, rows preserved).
-- `DB_PATH` may point to a file. If it points to a directory, resolution recognizes `db/data.sqlite`, `data.sqlite`, or `9router.db` when present, otherwise it selects `db/data.sqlite`.
+- `DB_PATH` may point to a file. If it points to a directory, resolution recognizes `db/data.sqlite`, `data.sqlite`, or `patunganrouter.db` when present, otherwise it selects `db/data.sqlite`.
 - There is no Go-side legacy-JSON import or backup transaction equivalent to upstream's schema migrator.
 - Provider credentials are stored in the database; protect the file and volume as secrets.
 
@@ -275,6 +275,6 @@ The web package has no frontend unit/component test script. Dashboard verificati
 
 ## Compatibility history and future work
 
-The upstream project was a Next.js/React application with a JavaScript SSE/routing core and SQLite migrator. 9router-go ports the proxy behavior, selected data shapes, route/auth contracts, and dashboard behavior into a Go/Svelte single process. References to upstream Next.js code in comments and changelog entries identify provenance for a contract; they do not identify the current runtime.
+The upstream project was a Next.js/React application with a JavaScript SSE/routing core and SQLite migrator. patunganrouter ports the proxy behavior, selected data shapes, route/auth contracts, and dashboard behavior into a Go/Svelte single process. References to upstream Next.js code in comments and changelog entries identify provenance for a contract; they do not identify the current runtime.
 
 Database migration/bootstrap support, frontend automated tests, additional unported upstream features, and parity gaps belong in `ROADMAP.md` or `TECHNICAL_DEBT.md` only as future work until implemented and verified.

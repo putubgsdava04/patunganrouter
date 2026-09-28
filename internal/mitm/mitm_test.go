@@ -126,7 +126,7 @@ func TestHostsEntries(t *testing.T) {
 	if !strings.Contains(entries, "chatgpt.com") {
 		t.Error("expected codex domain in entries")
 	}
-	if !strings.Contains(entries, "# 9router-mitm") {
+	if !strings.Contains(entries, "# patunganrouter-mitm") {
 		t.Error("expected marker comment")
 	}
 }

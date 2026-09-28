@@ -8,7 +8,7 @@ import (
 	"slices"
 	"time"
 
-	"9router/proxy/internal/models"
+	"patunganrouter/proxy/internal/models"
 )
 
 // UpdateProviderConnection updates a provider connection's name, priority, isActive, data, and updatedAt.

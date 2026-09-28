@@ -11,8 +11,8 @@ import (
 
 	"github.com/spf13/viper"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/log"
 )
 
 // Config holds the proxy gateway configuration.
@@ -74,7 +74,7 @@ func ProvideConfig(v *viper.Viper) *Config {
 }
 
 // ResolveDataDir returns the base data directory: DATA_DIR env, else the
-// platform default (~/.9router, or %APPDATA%/9router on Windows).
+// platform default (~/.patunganrouter, or %APPDATA%/patunganrouter on Windows).
 func ResolveDataDir() string {
 	if dataDir := os.Getenv("DATA_DIR"); dataDir != "" {
 		return dataDir
@@ -85,11 +85,11 @@ func ResolveDataDir() string {
 			if appData == "" {
 				appData = filepath.Join(homeDir, "AppData", "Roaming")
 			}
-			return filepath.Join(appData, "9router")
+			return filepath.Join(appData, "patunganrouter")
 		}
-		return filepath.Join(homeDir, ".9router")
+		return filepath.Join(homeDir, ".patunganrouter")
 	}
-	return ".9router"
+	return ".patunganrouter"
 }
 
 // LoadConfig loads the configuration from environment variables, .env file, and platform defaults using Viper.
@@ -131,8 +131,8 @@ func LoadConfigFromViper(v *viper.Viper) *Config {
 			dbPath = filepath.Join(dbPath, "db", "data.sqlite")
 		} else if _, err := os.Stat(filepath.Join(dbPath, "data.sqlite")); err == nil {
 			dbPath = filepath.Join(dbPath, "data.sqlite")
-		} else if _, err := os.Stat(filepath.Join(dbPath, "9router.db")); err == nil {
-			dbPath = filepath.Join(dbPath, "9router.db")
+		} else if _, err := os.Stat(filepath.Join(dbPath, "patunganrouter.db")); err == nil {
+			dbPath = filepath.Join(dbPath, "patunganrouter.db")
 		} else {
 			dbPath = filepath.Join(dbPath, "db", "data.sqlite")
 		}

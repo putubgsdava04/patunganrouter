@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/models"
+	"patunganrouter/proxy/internal/models"
 )
 
 // Repo wraps the SQLite handle and groups all persistence queries.

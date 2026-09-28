@@ -6,8 +6,8 @@ import (
 	"syscall"
 	"time"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/shutdown"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/shutdown"
 )
 
 // HandleShutdown handles POST /api/version/shutdown: acknowledges the request

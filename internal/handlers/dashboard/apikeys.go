@@ -8,8 +8,8 @@ import (
 
 	"github.com/google/uuid"
 
-	"9router/proxy/internal/auth"
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/auth"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 // HandleGetApiKeys handles GET /api/keys.

@@ -107,7 +107,7 @@
 
         <div class="p-3 rounded-lg bg-bg border border-border space-y-1 font-code text-xs">
           <div class="text-[10px] text-text-muted uppercase">Default Database Location</div>
-          <div class="text-info font-semibold">~/.9router/db/data.sqlite</div>
+          <div class="text-info font-semibold">~/.patunganrouter/db/data.sqlite</div>
           <div class="text-[10px] text-text-subtle pt-1">SQLite WAL • Configurable with DB_PATH or DATA_DIR</div>
           <div class="text-[10px] text-text-subtle pt-1">No automatic versioned schema migration; initialize a fresh database from a compatible upstream schema.</div>
         </div>

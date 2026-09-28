@@ -407,7 +407,7 @@
 
   onMount(async () => {
     try {
-      const savedLocale = localStorage.getItem('9router-locale') || localStorage.getItem('locale')
+      const savedLocale = localStorage.getItem('patunganrouter-locale') || localStorage.getItem('locale')
       if (savedLocale) locale = savedLocale
     } catch {}
 

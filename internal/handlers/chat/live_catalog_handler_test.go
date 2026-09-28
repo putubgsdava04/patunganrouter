@@ -10,7 +10,7 @@ import (
 
 	json "encoding/json/v2"
 
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/db"
 )
 
 // resetLiveCatalog clears the process-wide cache and restores the real endpoints

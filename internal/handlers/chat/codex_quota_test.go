@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/codexquota"
+	"patunganrouter/proxy/internal/codexquota"
 )
 
 func TestNoteCodexQuotaError_CachesUsageLimitReached(t *testing.T) {

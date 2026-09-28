@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // TestEnsureClaudeMessages_ThinkingDisplay covers the request-side half of

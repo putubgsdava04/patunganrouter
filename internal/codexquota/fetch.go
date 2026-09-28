@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 // UsageURL is the wham usage endpoint. Settable so tests in other packages

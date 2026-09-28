@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/models"
+	"patunganrouter/proxy/internal/models"
 )
 
 func TestSelectConnectionsNeedingRefresh(t *testing.T) {

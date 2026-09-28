@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/providers"
 )
 
 func TestRefreshCline(t *testing.T) {

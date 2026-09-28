@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-Add a safety net to the Gemini send path in `9router-go` so that **no `functionCall` part ever reaches a Gemini native endpoint without a `thoughtSignature`**. This mirrors the proven solution in the reference Next.js implementation (`/Users/luqmannul.hakim/htdocs/9router`), which hardcodes a default signature on every `functionCall` part and backfills one on any part that arrives unsigned. It closes the remaining 400-`thought_signature` gaps that turn-aware rotation (fix B) and the `__ts__` transport (fix A) cannot fully cover.
+Add a safety net to the Gemini send path in `patunganrouter` so that **no `functionCall` part ever reaches a Gemini native endpoint without a `thoughtSignature`**. This mirrors the proven solution in the reference Next.js implementation (`/Users/luqmannul.hakim/htdocs/9router`), which hardcodes a default signature on every `functionCall` part and backfills one on any part that arrives unsigned. It closes the remaining 400-`thought_signature` gaps that turn-aware rotation (fix B) and the `__ts__` transport (fix A) cannot fully cover.
 
 ## 2. Background — where the remaining 400s come from
 

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy"
 )
 
 // qoderTestServer answers with the given raw SSE body, and accepts any path

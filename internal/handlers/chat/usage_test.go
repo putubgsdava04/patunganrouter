@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/translator"
 )
 
 func TestExtractContent(t *testing.T) {

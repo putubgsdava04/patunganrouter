@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/translator"
 )
 
 // setupHandlerForForward wires a ChatHandler to a temp DB (no connections needed for forward tests).

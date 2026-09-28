@@ -8,11 +8,11 @@ import (
 	"net/http"
 	"strings"
 
-	"9router/proxy/internal/constants"
+	"patunganrouter/proxy/internal/constants"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/models"
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/models"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // multimodalPath returns the sub-endpoint URL for a multimodal service.

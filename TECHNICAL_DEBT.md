@@ -1,6 +1,6 @@
 # Technical Debt Register
 
-This register covers verified, still-open risks in `9router-go` v1.9.1. It supersedes the former declarations that no critical, high, or medium debt existed. “Resolved” work from the changelog is not listed here unless it explains a remaining limitation.
+This register covers verified, still-open risks in `patunganrouter` v1.9.1. It supersedes the former declarations that no critical, high, or medium debt existed. “Resolved” work from the changelog is not listed here unless it explains a remaining limitation.
 
 Severity reflects operational impact if the condition occurs, not likelihood:
 

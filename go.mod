@@ -1,4 +1,4 @@
-module 9router/proxy
+module patunganrouter/proxy
 
 go 1.27
 

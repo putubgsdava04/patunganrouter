@@ -19,8 +19,8 @@ import (
 
 	json "encoding/json/v2"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 const (

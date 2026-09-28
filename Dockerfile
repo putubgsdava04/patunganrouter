@@ -17,9 +17,9 @@ COPY --from=web-builder /app/web/dist ./web/dist
 ARG VERSION
 RUN VERSION=${VERSION:-$(cat VERSION 2>/dev/null || cat version.json | sed -n 's/.*"latestVersion": *"\([^"]*\)".*/\1/p')} && \
     echo "Building version $VERSION" && \
-    CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w -X '9router/proxy/internal/updater.CurrentVersion=${VERSION}'" -o 9router-go ./cmd/9router-go/
+    CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w -X 'patunganrouter/proxy/internal/updater.CurrentVersion=${VERSION}'" -o patunganrouter ./cmd/patunganrouter/
 FROM alpine:3.21
 RUN apk add --no-cache ca-certificates tzdata
-COPY --from=builder /app/9router-go /usr/local/bin/9router-go
+COPY --from=builder /app/patunganrouter /usr/local/bin/patunganrouter
 EXPOSE 20130
-ENTRYPOINT ["9router-go"]
+ENTRYPOINT ["patunganrouter"]

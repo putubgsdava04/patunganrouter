@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Live provider smoke test.
 
-Boots a 9router-go build against a COPY of the real user DB and issues one
+Boots a patunganrouter build against a COPY of the real user DB and issues one
 real /v1/chat/completions request per provider, recording the HTTP status,
 negotiated protocol, and response shape. Run against two binaries to prove
 PGO / transport-pool changes do not alter provider behavior.
@@ -18,7 +18,7 @@ import urllib.error
 import urllib.request
 
 PROXY_PORT = int(os.environ.get("SMOKE_PORT", "20177"))
-REAL_DB = os.path.expanduser("~/.9router/db/data.sqlite")
+REAL_DB = os.path.expanduser("~/.patunganrouter/db/data.sqlite")
 API_KEY = os.environ["SMOKE_API_KEY"]
 
 # (label, model) pairs. Model IDs are taken from this gateway's own /v1/models

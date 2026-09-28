@@ -1,7 +1,7 @@
 package executor
 
 import (
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/log"
 	"bytes"
 	"context"
 	"crypto/hmac"
@@ -19,9 +19,9 @@ import (
 
 	"github.com/google/uuid"
 
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/translator"
 )
 
 // ---- Provider-specific executors ----

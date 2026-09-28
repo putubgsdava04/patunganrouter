@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"9router/proxy/internal/codexquota"
-	"9router/proxy/internal/log"
+	"patunganrouter/proxy/internal/codexquota"
+	"patunganrouter/proxy/internal/log"
 )
 
 var (

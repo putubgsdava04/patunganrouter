@@ -399,7 +399,7 @@
       const res = await api.createApiKey({ name: newKeyName.trim() })
       if (res.key) {
         newlyCreatedKey = res.key
-        localStorage.setItem('9router_key', res.key)
+        localStorage.setItem('patunganrouter_key', res.key)
         newKeyName = ''
         isCreateKeyOpen = false
         await loadStatus()
@@ -1094,7 +1094,7 @@
         <div class="space-y-1 text-xs">
           <p class="font-bold text-text-main">Cloudflare Quick Tunnel</p>
           <p class="text-text-muted leading-relaxed">
-            Expose your local 9router-go to the internet. No port forwarding, no static IP needed. Share endpoint URL with your team or use it in Cursor, Cline, and other AI tools from anywhere.
+            Expose your local patunganrouter to the internet. No port forwarding, no static IP needed. Share endpoint URL with your team or use it in Cursor, Cline, and other AI tools from anywhere.
           </p>
         </div>
       </div>
@@ -1199,7 +1199,7 @@
       {:else}
         <div class="space-y-3">
           <p class="text-sm text-text-muted leading-relaxed">
-            Tailscale is installed. Click Connect to expose your 9router-go via Tailscale Funnel.
+            Tailscale is installed. Click Connect to expose your patunganrouter via Tailscale Funnel.
           </p>
         </div>
       {/if}

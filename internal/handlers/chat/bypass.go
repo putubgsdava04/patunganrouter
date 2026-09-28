@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/constants"
+	"patunganrouter/proxy/internal/constants"
 )
 
 // bypassResponse represents a fake response for bypassed requests.

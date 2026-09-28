@@ -11,11 +11,11 @@ import (
 
 	json "encoding/json/v2"
 
-	"9router/proxy/internal/constants"
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/proxy"
-	"9router/proxy/internal/shutdown"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/constants"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/shutdown"
+	"patunganrouter/proxy/internal/translator"
 )
 
 // ForwardOpenAI sends an OpenAI-format request and writes the response.

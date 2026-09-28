@@ -1,6 +1,6 @@
 package providers
 
-// ProviderModels maps provider aliases/IDs to their supported models in 9router.
+// ProviderModels maps provider aliases/IDs to their supported models in patunganrouter.
 // Ported verbatim from open-sse/providers/registry (registry/{id}.js models arrays,
 // keyed by uiAlias/alias and by provider id so both lookups resolve).
 var ProviderModels = map[string][]string{

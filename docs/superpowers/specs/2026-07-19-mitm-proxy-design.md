@@ -1,10 +1,10 @@
 # MITM Proxy — Full TLS Intercept for CLI Tools
 
-> Design for MITM proxy in 9router-go. Matches JS reference at `src/mitm/`.
+> Design for MITM proxy in patunganrouter. Matches JS reference at `src/mitm/`.
 
 ## Goal
 
-Intercept Antigravity, Codex, Copilot, Cursor, and Kiro CLI traffic at the network level. Redirect tool domains to localhost, terminate TLS via SNI, then forward to 9router proxy.
+Intercept Antigravity, Codex, Copilot, Cursor, and Kiro CLI traffic at the network level. Redirect tool domains to localhost, terminate TLS via SNI, then forward to patunganrouter proxy.
 
 ## Architecture
 
@@ -24,7 +24,7 @@ Client CLI → antigravity/codex domain (443)
          handler  handler handler handler handler
             │        │       │       │      │
             └────────┼───────┼───────┼──────┘
-               9router proxy (localhost:20128)
+               patunganrouter proxy (localhost:20128)
 ```
 
 ## Components
@@ -42,13 +42,13 @@ Client CLI → antigravity/codex domain (443)
 - Health check: resolve domain → 127.0.0.1
 
 ### 2. CA + Certificates (`internal/mitm/cert.go`)
-- Generate root CA on first run (`~/.9router/mitm/rootCA.pem`, `rootCA-key.pem`)
+- Generate root CA on first run (`~/.patunganrouter/mitm/rootCA.pem`, `rootCA-key.pem`)
 - `crypto/x509` + `crypto/rand`
 - Install root CA to system trust store:
   - macOS: `security add-trusted-cert -d -r trustRoot`
   - Linux: `update-ca-certificates`
 - Per-domain leaf certs generated on-demand in SNI callback
-- Cached in `~/.9router/mitm/certs/{domain}.pem`
+- Cached in `~/.patunganrouter/mitm/certs/{domain}.pem`
 - Re-generate if expired (leaf TTL: 1 year)
 
 ### 3. SNI Server (`internal/mitm/server.go`)
@@ -70,7 +70,7 @@ Client CLI → antigravity/codex domain (443)
 
 All handlers:
 1. Parse request body
-2. Rewrite model/URL to 9router format
+2. Rewrite model/URL to patunganrouter format
 3. POST to `localhost:20128/v1/chat/completions` (or responses)
 4. Pipe response (SSE or JSON) back to client
 
@@ -78,11 +78,11 @@ All handlers:
 - Start: verify CA → setup DNS → start server → track PID
 - Stop: remove DNS entries → stop server (cleanup)
 - Status: check DNS + server health
-- Config via `~/.9router/config.yaml`:
+- Config via `~/.patunganrouter/config.yaml`:
   - `mitm.enabled`, `mitm.port` (default 443)
 
 ### 6. CLI Integration
-- `cmd/9router-go/main.go`: `--mitm` flag group
+- `cmd/patunganrouter/main.go`: `--mitm` flag group
 - `--mitm enable` — start MITM proxy
 - `--mitm disable` — stop MITM proxy
 - `--mitm status` — check running state
@@ -101,7 +101,7 @@ All handlers:
 | `internal/mitm/handlers/cursor.go` | ~60 | Cursor handler |
 | `internal/mitm/handlers/kiro.go` | ~80 | Kiro handler |
 | `internal/mitm/handlers/base.go` | ~60 | Shared (fetchRouter, pipeSSE) |
-| `cmd/9router-go/main.go` | +30 | MITM CLI flags |
+| `cmd/patunganrouter/main.go` | +30 | MITM CLI flags |
 | Tests | ~200 | Per-handler + integration |
 | **Total** | **~1250** | |
 
@@ -116,7 +116,7 @@ All handlers:
 
 ## Security
 
-- Root CA private key stored at `~/.9router/mitm/rootCA-key.pem` (0600 perms)
+- Root CA private key stored at `~/.patunganrouter/mitm/rootCA-key.pem` (0600 perms)
 - Only intercepts configured domains — all other traffic passes through
 - CA cert only installed on this machine
 - No persistent network-level interception

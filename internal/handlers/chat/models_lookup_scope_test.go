@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // resetModelScopeDB drops connection rows and the disable list so a test starts

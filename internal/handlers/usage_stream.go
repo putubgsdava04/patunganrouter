@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"time"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/shutdown"
-	"9router/proxy/internal/usagetracker"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/shutdown"
+	"patunganrouter/proxy/internal/usagetracker"
 )
 
 const usagePingInterval = 25 * time.Second

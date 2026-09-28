@@ -3,8 +3,8 @@ package dashboard
 import (
 	"net/http"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // modelCaps is the per-model capability block the dashboard needs to render the

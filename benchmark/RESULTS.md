@@ -93,7 +93,7 @@ bash benchmark/run_comparison.sh
 
 # Or manually:
 go run benchmark/mock_upstream.go &                    # mock upstream on :20199
-go build -o /tmp/go-proxy ./cmd/9router-go/        # build Go proxy
+go build -o /tmp/go-proxy ./cmd/patunganrouter/        # build Go proxy
 DATA_DIR=<db_dir> PORT=20131 /tmp/go-proxy &          # start Go proxy
 PORT=20132 NODE_ENV=production node ../.next/standalone/server.js &  # start Next.js
 

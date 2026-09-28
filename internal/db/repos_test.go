@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 func setupTestDB(t *testing.T) (*sql.DB, func()) {

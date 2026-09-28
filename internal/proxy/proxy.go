@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"strings"
 
-	"9router/proxy/internal/constants"
+	"patunganrouter/proxy/internal/constants"
 )
 
 // UpstreamError captures a non-200 upstream response.

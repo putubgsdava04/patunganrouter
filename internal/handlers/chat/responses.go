@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/log"
-	internalproxy "9router/proxy/internal/proxy"
-	"9router/proxy/internal/proxy/executor"
-	"9router/proxy/internal/translator"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/log"
+	internalproxy "patunganrouter/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/translator"
 )
 
 // responsesEndpoint labels the client-facing endpoint in usage logs.

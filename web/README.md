@@ -1,4 +1,4 @@
-# 9router-go Dashboard
+# patunganrouter Dashboard
 
 The dashboard is a Svelte 5 single-page application built with Vite, TypeScript, and Tailwind CSS 4. It calls the native Go server for dashboard and proxy APIs; it does not access SQLite directly and does not require a JavaScript runtime in production.
 

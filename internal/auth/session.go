@@ -18,8 +18,8 @@ import (
 
 	json "encoding/json/v2"
 
-	"9router/proxy/internal/config"
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/config"
+	"patunganrouter/proxy/internal/db"
 )
 
 const (

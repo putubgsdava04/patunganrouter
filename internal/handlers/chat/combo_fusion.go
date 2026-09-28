@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/shutdown"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/shutdown"
 )
 
 type fusionAnswer struct {

@@ -1,4 +1,4 @@
-# 9Router Go — Roadmap and Acceptance Criteria
+# patunganrouter — Roadmap and Acceptance Criteria
 
 This roadmap is for the current native Go gateway and its embedded Svelte dashboard. It separates near-term hardening from optional product work; it is not a claim of upstream feature parity. The current release metadata is `v1.9.1`. The repository manifest tracks upstream `v0.5.85`; the changelog also contains separately listed `v0.5.86` parity work. That mismatch must be resolved in release metadata before describing a complete upstream baseline.
 

@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/dbtest"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/dbtest"
 )
 
 func TestTracker_Lifecycle(t *testing.T) {

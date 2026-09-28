@@ -7,7 +7,7 @@ import (
 	"slices"
 	"testing"
 
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/db"
 )
 
 // fetchCaps calls GET /api/models/caps?provider=<provider> and returns the

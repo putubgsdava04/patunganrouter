@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"time"
 
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/shutdown"
-	"9router/proxy/internal/tracing"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/shutdown"
+	"patunganrouter/proxy/internal/tracing"
 )
 
 // consolePingInterval matches the Next dashboard's 25s keepalive so proxies

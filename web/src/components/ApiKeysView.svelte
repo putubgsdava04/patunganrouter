@@ -65,7 +65,7 @@
     }
   }
 
-  let primaryKey = $derived(apiKeys[0]?.key || 'sk-9router-local-token')
+  let primaryKey = $derived(apiKeys[0]?.key || 'sk-patunganrouter-local-token')
 </script>
 
 <div class="space-y-6">

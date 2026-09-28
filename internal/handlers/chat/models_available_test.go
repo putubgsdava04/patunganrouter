@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/providers"
 )
 
 func modelsIDs(t *testing.T, h *ChatHandler) []string {

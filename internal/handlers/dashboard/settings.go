@@ -14,9 +14,9 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"9router/proxy/internal/auth"
-	"9router/proxy/internal/config"
-	"9router/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/auth"
+	"patunganrouter/proxy/internal/config"
+	"patunganrouter/proxy/internal/handlerutil"
 )
 
 // Dashboard client headers, matching the Next dashboard settings/database route.
@@ -215,7 +215,7 @@ func (h *DashboardHandler) HandleProxyTest(w http.ResponseWriter, r *http.Reques
 		handlerutil.WriteJSON(w, http.StatusInternalServerError, map[string]any{"ok": false, "error": err.Error()})
 		return
 	}
-	req.Header.Set("User-Agent", "9Router")
+	req.Header.Set("User-Agent", "patunganrouter")
 
 	resp, err := client.Do(req)
 	if err != nil {

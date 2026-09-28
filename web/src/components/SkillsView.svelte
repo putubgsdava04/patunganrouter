@@ -18,7 +18,7 @@
   const skills: Skill[] = [
     {
       id: '9router',
-      name: '9router-go (Entry)',
+      name: 'patunganrouter (Entry)',
       description:
         'Setup + index of all capabilities. Start here — covers base URL, auth, model discovery, and links to every capability skill.',
       endpoint: null,

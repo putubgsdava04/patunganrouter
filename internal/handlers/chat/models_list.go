@@ -7,10 +7,10 @@ import (
 
 	json "encoding/json/v2"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlers/shared"
-	"9router/proxy/internal/models"
-	"9router/proxy/internal/providers"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlers/shared"
+	"patunganrouter/proxy/internal/models"
+	"patunganrouter/proxy/internal/providers"
 )
 
 // ModelInfoObject represents a model entry in the /v1/models response. The

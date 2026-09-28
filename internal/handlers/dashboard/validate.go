@@ -15,11 +15,11 @@ import (
 
 	"github.com/google/uuid"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/models"
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/models"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy/executor"
 )
 
 // validateProbeTimeout mirrors upstream's AbortSignal.timeout(8000) on probes.

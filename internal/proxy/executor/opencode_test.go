@@ -1,8 +1,8 @@
 package executor
 
 import (
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy"
 	json "encoding/json/v2"
 	"io"
 	"net/http"

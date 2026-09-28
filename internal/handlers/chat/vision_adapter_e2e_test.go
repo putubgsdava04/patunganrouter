@@ -9,7 +9,7 @@ import (
 
 	json "encoding/json/v2"
 
-	"9router/proxy/internal/db"
+	"patunganrouter/proxy/internal/db"
 )
 
 func TestVisionAdapter_E2E_ChatCompletions_AutoSwitch(t *testing.T) {

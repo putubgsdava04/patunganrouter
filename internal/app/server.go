@@ -13,12 +13,12 @@ import (
 
 	"go.uber.org/fx"
 
-	"9router/proxy/internal/config"
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/providers"
-	"9router/proxy/internal/proxy/oauth"
-	"9router/proxy/internal/shutdown"
-	"9router/proxy/internal/updater"
+	"patunganrouter/proxy/internal/config"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/providers"
+	"patunganrouter/proxy/internal/proxy/oauth"
+	"patunganrouter/proxy/internal/shutdown"
+	"patunganrouter/proxy/internal/updater"
 )
 
 // ServerModule provides *http.Server and manages its lifecycle and background tasks.
@@ -70,7 +70,7 @@ func ProvideServer(p ServerParams) *http.Server {
 			providers.StartBackgroundCatalogSync(shutdown.Context(), nil, catalogPath)
 			oauth.StartBackgroundRefresh(shutdown.Context(), p.Repo)
 
-			log.Printf("9router-go Proxy (%s) starting on port %d", updater.CurrentVersion, p.Config.Port)
+			log.Printf("patunganrouter Proxy (%s) starting on port %d", updater.CurrentVersion, p.Config.Port)
 
 			go func() {
 				if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
@@ -78,7 +78,7 @@ func ProvideServer(p ServerParams) *http.Server {
 				}
 			}()
 
-			fmt.Fprintf(os.Stdout, "\n  🚀 9router-go Proxy (%s) on %s\n\n", updater.CurrentVersion, addr)
+			fmt.Fprintf(os.Stdout, "\n  🚀 patunganrouter Proxy (%s) on %s\n\n", updater.CurrentVersion, addr)
 			log.Printf("Server is ready to handle requests at %s", addr)
 			return nil
 		},

@@ -8,11 +8,11 @@ import (
 	"net/http"
 	"strings"
 
-	"9router/proxy/internal/db"
-	"9router/proxy/internal/handlerutil"
-	"9router/proxy/internal/log"
-	"9router/proxy/internal/models"
-	"9router/proxy/internal/proxy/executor"
+	"patunganrouter/proxy/internal/db"
+	"patunganrouter/proxy/internal/handlerutil"
+	"patunganrouter/proxy/internal/log"
+	"patunganrouter/proxy/internal/models"
+	"patunganrouter/proxy/internal/proxy/executor"
 )
 
 var freebuffAPIBaseURL = "https://www.codebuff.com"
